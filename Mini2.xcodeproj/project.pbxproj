@@ -11,6 +11,7 @@
 		C81B92032C24119C00282A88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92022C24119C00282A88 /* ContentView.swift */; };
 		C81B92052C24119D00282A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81B92042C24119D00282A88 /* Assets.xcassets */; };
 		C81B92082C24119D00282A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81B92072C24119D00282A88 /* Preview Assets.xcassets */; };
+		C81B92192C24920900282A88 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92182C24920900282A88 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C81B92022C24119C00282A88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C81B92042C24119D00282A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C81B92072C24119D00282A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C81B92182C24920900282A88 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,9 @@
 			isa = PBXGroup;
 			children = (
 				C81B92002C24119C00282A88 /* Mini2App.swift */,
-				C81B92022C24119C00282A88 /* ContentView.swift */,
+				C81B920E2C24128400282A88 /* Model */,
+				C81B920F2C24128B00282A88 /* View */,
+				C81B92102C24129100282A88 /* ViewModel */,
 				C81B92042C24119D00282A88 /* Assets.xcassets */,
 				C81B92062C24119D00282A88 /* Preview Content */,
 			);
@@ -65,6 +69,53 @@
 				C81B92072C24119D00282A88 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C81B920E2C24128400282A88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C81B920F2C24128B00282A88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C81B92112C24129900282A88 /* ScreenView */,
+				C81B92122C2412A100282A88 /* ComponentView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C81B92102C24129100282A88 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C81B92112C24129900282A88 /* ScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				C81B92022C24119C00282A88 /* ContentView.swift */,
+			);
+			path = ScreenView;
+			sourceTree = "<group>";
+		};
+		C81B92122C2412A100282A88 /* ComponentView */ = {
+			isa = PBXGroup;
+			children = (
+				C81B92172C2491DF00282A88 /* CustomComponent */,
+			);
+			path = ComponentView;
+			sourceTree = "<group>";
+		};
+		C81B92172C2491DF00282A88 /* CustomComponent */ = {
+			isa = PBXGroup;
+			children = (
+				C81B92182C24920900282A88 /* CustomButton.swift */,
+			);
+			path = CustomComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C81B92192C24920900282A88 /* CustomButton.swift in Sources */,
 				C81B92032C24119C00282A88 /* ContentView.swift in Sources */,
 				C81B92012C24119C00282A88 /* Mini2App.swift in Sources */,
 			);
