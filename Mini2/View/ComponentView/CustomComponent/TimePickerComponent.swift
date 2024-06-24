@@ -24,11 +24,19 @@ struct TimePickerComponent: View {
         
         ZStack {
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.white, lineWidth: 3)
-                .background(RoundedRectangle(cornerRadius: 12).fill(Color.primary1))
+                .stroke(Color.black, lineWidth: 4)
+                .background(RoundedRectangle(cornerRadius: 12)
+                .fill(Color.primary1))
                 .frame(width: 200, height: 120)
                 .cornerRadius(12)
                 .shadow(color: Color.black.opacity(0.3), radius: 2, x: 3, y: 4)
+                .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                .inset(by: -0.5)
+                .stroke(.white, lineWidth: 4)
+
+                )
+               
             
             
             Picker("Select Hour", selection: $selectedHour) {
@@ -45,11 +53,18 @@ struct TimePickerComponent: View {
         
         ZStack {
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.white, lineWidth: 3)
-                .background(RoundedRectangle(cornerRadius: 12).fill(Color(red: 0.84, green: 0.89, blue: 0.96)))
+                .stroke(Color.black, lineWidth: 3)
+                .background(RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.white))
                 .frame(width: 319, height: 112)
                 .cornerRadius(12)
                 .shadow(color: Color.black.opacity(0.3), radius: 2, x: 3, y: 4)
+                .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                .inset(by: -0.5)
+                .stroke(.white, lineWidth: 3)
+
+                )
 
             
             HStack {
