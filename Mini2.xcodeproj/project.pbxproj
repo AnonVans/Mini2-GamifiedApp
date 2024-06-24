@@ -14,6 +14,11 @@
 		C81B92192C24920900282A88 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92182C24920900282A88 /* CustomButton.swift */; };
 		C81E9BB32C2597A4008F45C4 /* EggCatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E9BB22C2597A4008F45C4 /* EggCatchViewModel.swift */; };
 		C81E9BB52C2597C6008F45C4 /* UserModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E9BB42C2597C6008F45C4 /* UserModelData.swift */; };
+		C88CA5872C268FC500815471 /* BreakSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA5862C268FC500815471 /* BreakSessionView.swift */; };
+		C88CA5892C268FD200815471 /* BreakEndActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA5882C268FD200815471 /* BreakEndActionView.swift */; };
+		C88CA58B2C26914E00815471 /* EggGachaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58A2C26914E00815471 /* EggGachaView.swift */; };
+		C88CA58D2C2692B800815471 /* TimerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58C2C2692B800815471 /* TimerComponent.swift */; };
+		C88CA5902C2698B200815471 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58F2C2698B200815471 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +30,11 @@
 		C81B92182C24920900282A88 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C81E9BB22C2597A4008F45C4 /* EggCatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCatchViewModel.swift; sourceTree = "<group>"; };
 		C81E9BB42C2597C6008F45C4 /* UserModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelData.swift; sourceTree = "<group>"; };
+		C88CA5862C268FC500815471 /* BreakSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakSessionView.swift; sourceTree = "<group>"; };
+		C88CA5882C268FD200815471 /* BreakEndActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakEndActionView.swift; sourceTree = "<group>"; };
+		C88CA58A2C26914E00815471 /* EggGachaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggGachaView.swift; sourceTree = "<group>"; };
+		C88CA58C2C2692B800815471 /* TimerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponent.swift; sourceTree = "<group>"; };
+		C88CA58F2C2698B200815471 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +71,7 @@
 				C81B920E2C24128400282A88 /* Model */,
 				C81B920F2C24128B00282A88 /* View */,
 				C81B92102C24129100282A88 /* ViewModel */,
+				C88CA58E2C26987300815471 /* Manager */,
 				C81B92042C24119D00282A88 /* Assets.xcassets */,
 				C81B92062C24119D00282A88 /* Preview Content */,
 			);
@@ -104,6 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				C81B92022C24119C00282A88 /* ContentView.swift */,
+				C88CA5862C268FC500815471 /* BreakSessionView.swift */,
+				C88CA5882C268FD200815471 /* BreakEndActionView.swift */,
+				C88CA58A2C26914E00815471 /* EggGachaView.swift */,
 			);
 			path = ScreenView;
 			sourceTree = "<group>";
@@ -111,6 +125,7 @@
 		C81B92122C2412A100282A88 /* ComponentView */ = {
 			isa = PBXGroup;
 			children = (
+				C88CA58C2C2692B800815471 /* TimerComponent.swift */,
 				C81B92172C2491DF00282A88 /* CustomComponent */,
 			);
 			path = ComponentView;
@@ -122,6 +137,14 @@
 				C81B92182C24920900282A88 /* CustomButton.swift */,
 			);
 			path = CustomComponent;
+			sourceTree = "<group>";
+		};
+		C88CA58E2C26987300815471 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C88CA58F2C2698B200815471 /* Extensions.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,9 +219,14 @@
 			files = (
 				C81E9BB52C2597C6008F45C4 /* UserModelData.swift in Sources */,
 				C81E9BB32C2597A4008F45C4 /* EggCatchViewModel.swift in Sources */,
+				C88CA5892C268FD200815471 /* BreakEndActionView.swift in Sources */,
 				C81B92192C24920900282A88 /* CustomButton.swift in Sources */,
+				C88CA5872C268FC500815471 /* BreakSessionView.swift in Sources */,
+				C88CA5902C2698B200815471 /* Extensions.swift in Sources */,
 				C81B92032C24119C00282A88 /* ContentView.swift in Sources */,
 				C81B92012C24119C00282A88 /* Mini2App.swift in Sources */,
+				C88CA58D2C2692B800815471 /* TimerComponent.swift in Sources */,
+				C88CA58B2C26914E00815471 /* EggGachaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
