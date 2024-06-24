@@ -13,10 +13,10 @@ struct StudySessionTimerView: View {
     @State private var timeRemaining = 10
     @State private var format = "0:0"
     @State private var sessionFinished = false
-    var currentSession:Int
-    var studyTime:Int
-    var totalSession:Int
     @ObservedObject private var vm = TimeAssignmentViewModel()
+    @State private var chickenXPosition = 200.0
+    @State private var chickenLeft = true
+    @State private var chickenDirection = "Ayam"
     
     var body: some View {
         NavigationStack{
@@ -26,12 +26,28 @@ struct StudySessionTimerView: View {
                     .ignoresSafeArea()
                 
                 VStack{
-                    Text("Study Session \(currentSession) of \(totalSession)")
-                        .font(.system(size: 17))
-                        .fontWeight(.semibold)
                     
-                    Image("Ayam")
-                        .padding(.top, 50)
+                    Text("Study Time!")
+                        .font(.system(size: 27))
+                        .fontWeight(.semibold)
+                        .padding(.top, 100)
+                    
+                    Image(chickenDirection)
+                        .position(CGPoint(x: chickenXPosition, y: 50.0))
+                        .padding(.top, 100)
+                        .onReceive(timer) { input in
+                            if(chickenXPosition > 10 && chickenLeft){
+                                chickenXPosition -= 10
+                            } else if(chickenXPosition == 400) {
+                                chickenLeft = true
+                                chickenDirection = "Ayam"
+                            } else {
+                                chickenLeft = false
+                                chickenDirection = "ayamKanan"
+                                chickenXPosition += 10
+                            }
+                        }
+                        .animation(.bouncy(duration: 1), value: chickenXPosition)
                     
                     Text("\(format)")
                         .onReceive(timer) { input in
@@ -48,28 +64,24 @@ struct StudySessionTimerView: View {
                         .onChange(of: timeRemaining){
                             timeFormat(remainingTime:timeRemaining)
                         }
-                        .fontWeight(.regular)
-                        .font(.system(size: 56))
-                        .padding(.top, 50)
+                        .fontWeight(.bold)
+                        .font(.system(size: 48))
+                        .padding(.top, -300)
                     
                     Text("time left")
                         .font(.system(size: 19))
-                        .navigationDestination(isPresented: $sessionFinished){
-                            BeforeBreakView(currentSession: currentSession, totalSession: totalSession)}
+                        .padding(.top, -270)
                     
                     Spacer()
                 }
             }
         }
         .navigationBarBackButtonHidden()
-        .onAppear(perform: {
-//            timeRemaining = studyTime * 60
-        })
     }
 }
 
 #Preview {
-    StudySessionTimerView(currentSession: 0, studyTime: 1, totalSession: 1)
+    StudySessionTimerView()
 }
 
 extension StudySessionTimerView{
@@ -77,5 +89,9 @@ extension StudySessionTimerView{
         let duration = Duration.seconds(timeRemaining)
         format = duration.formatted(
             .time(pattern: .minuteSecond))
+    }
+    
+    func addGradient(){
+        
     }
 }

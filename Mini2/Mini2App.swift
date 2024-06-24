@@ -11,8 +11,7 @@ import SwiftUI
 struct Mini2App: App {
     var body: some Scene {
         WindowGroup {
-            StudySessionTimerView(currentSession: 0, studyTime: 1, totalSession: 1)
-                .modelContainer(for: StudySessionModel.self)
+            StudySessionTimerView()
         }
     }
 }

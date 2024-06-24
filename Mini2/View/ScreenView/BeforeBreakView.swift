@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct BeforeBreakView: View {
-    var currentSession:Int
-    var totalSession:Int
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let eggTimer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     @State private var timeRemaining = 0.0
@@ -19,17 +17,12 @@ struct BeforeBreakView: View {
     @State private var leftArrowXAmount = 60.0
     @State private var rightArrowXAmount = 60.0
     @State private var basketTapped = false
-    @State private var eggXAmount = CGFloat.random(in: 50..<351)
-    @State private var eggYAmount = 0.0
-    @State private var isAnimating = false
-//    let targetPosition:CGFloat = 300
-//    let eggSize: CGSize = CGSize(width: 50, height: 70)
-//    let basketSize: CGSize = CGSize(width: 150, height: 150)
     @State private var eggCounter = 0
     @State private var basketPosition:CGPoint = CGPoint(x: 200.0, y: 670.0)
-    @State private var eggPositions: [CGPoint] = Array(repeating: CGPoint(x: 0, y: 0), count: 3)
+    @State private var eggPositions: [CGPoint] = Array(repeating: CGPoint(x: 0, y: 200), count: 3)
+    @State private var eggDisappear: [Bool] = Array(repeating: false, count: 3)
     @State private var currentEggIndex: Int = 0
-    @State private var chickenPosition = CGPoint(x: 100, y: 100.0)
+    @State private var chickenPositions: [CGPoint] = Array(repeating: CGPoint(x: 100, y: 100), count: 3)
     
     var body: some View {
         NavigationStack{
@@ -39,7 +32,7 @@ struct BeforeBreakView: View {
                     .ignoresSafeArea()
                 
                 VStack{
-                    Text("Study Session \(currentSession) of \(totalSession)")
+                    Text("Study Session 0 of 1")
                         .font(.system(size: 17))
                         .fontWeight(.semibold)
                     
@@ -131,52 +124,46 @@ struct BeforeBreakView: View {
                                     }
                                 
                                 VStack{
-                                    Image("Ayam")
-//                                        .position(chickenPosition)
-                                        .frame(width: 160)
                                     ZStack {
                                         ForEach(0..<eggPositions.count, id: \.self) { index in
+                                            Image("Ayam")
+                                                .padding(.top, 50)
+                                                .position(chickenPositions[index])
+                                                .opacity(index <= currentEggIndex && !eggDisappear[index] ? 1 : 0)
+                                            
                                             Image("telor")
                                                 .resizable()
                                                 .frame(width: 60, height: 100)
                                                 .position(eggPositions[index])
-                                                .opacity(index <= currentEggIndex ? 1 : 0)
+                                                .opacity(index <= currentEggIndex && !eggDisappear[index] ? 1 : 0)
                                                 .animation(.default, value: currentEggIndex)
                                         }
                                     }
                                     .onAppear {
                                         for i in 0..<eggPositions.count {
                                             eggPositions[i].x = CGFloat.random(in: 50..<351)
-                                            chickenPosition.x = eggPositions[i].x
+                                            chickenPositions[i].x = eggPositions[i].x
                                         }
                                     }
                                     .onReceive(eggTimer) { _ in
                                         if currentEggIndex < eggPositions.count {
                                             withAnimation(Animation.easeInOut(duration: 1)) {
-                                                eggPositions[currentEggIndex].y = 400
+                                                eggPositions[currentEggIndex].y = 650
+                                            } completion: {
+                                                checkEggCaught(currentEggIndex: currentEggIndex)
+                                                
+                                                currentEggIndex += 1
                                             }
-                                            currentEggIndex += 1
+                                            
+                                            
+                                            
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                                                eggDisappear[currentEggIndex - 1] = true
+                                                            }
                                         }
                                     }
                                 }
-                                    
-                                                                
                                 
-                                //                                    Image("telor")
-                                //                                        .resizable()
-                                //                                        .frame(width: 60, height: 100)
-                                //                                        .position(CGPoint(x: eggXAmount, y: eggYAmount))
-                                //                                        .onReceive(timer){input in
-                                //                                            if(eggYAmount <= 250 && eggYAmount < basketPosition.y){
-                                //                                                eggYAmount += 200
-                                //                                            }
-                                //                                        }
-                                //                                        .animation(.easeInOut(duration: 1), value: eggYAmount)
-                                //                                        .onChange(of: eggYAmount){
-                                //                                            if(eggYAmount == 400){
-                                //                                                checkEggCaught()
-                                //                                            }
-                                //                                        }
                                 Spacer()
                             }
                         }
@@ -188,45 +175,22 @@ struct BeforeBreakView: View {
         .navigationBarBackButtonHidden()
     }
     
-    private func checkEggCaught() {
-            // Calculate the position of the egg and the basket in the coordinate system
-//        let eggFrame = CGRect(x: eggPosition.x, y: eggPosition.y, width: eggSize.width, height: eggSize.height)
-//        let basketFrame = CGRect(x: basketPosition.x, y: basketPosition.y, width: basketSize.width, height: basketSize.height)
-//            // Check if the egg frame intersects with the basket frame
-//        if eggFrame.intersects(basketFrame) {
-//            eggCounter += 1 // Increment the egg counter
-//            resetEgg() // Reset the egg to the initial position
-//            print("hello")
-//        } else {
-//            print("nooo")
-//        }
-//        if(basketPosition.x == eggPosition.x){
-//            print("yayy")
-//        } else {
-//            print("noo")
-//        }
-        
-        if(eggXAmount <= basketPosition.x + 50 && eggXAmount >= basketPosition.x - 50){
+    private func checkEggCaught(currentEggIndex: Int) {
+        if(eggPositions[currentEggIndex].x <= basketPosition.x + 50 && eggPositions[currentEggIndex].x >= basketPosition.x - 50){
             eggCounter += 1
             print("yesss")
-            print("\(basketPosition.x) and \(eggXAmount)")
-//            resetEgg()
+            print("\(basketPosition.x) and \(eggPositions[currentEggIndex].x)")
         } else {
             print("no")
-            print("\(basketPosition.x) and \(eggXAmount)")
+            print("\(basketPosition.x) and \(eggPositions[currentEggIndex].x)")
         }
         
         print("eggcounter: \(eggCounter)")
     }
-
-        private func resetEgg() {
-            eggXAmount = CGFloat.random(in: 50..<351)
-            eggYAmount = 0.0
-        }
 }
 
 #Preview {
-    BeforeBreakView(currentSession: 0, totalSession: 0)
+    BeforeBreakView()
 }
 
 extension BeforeBreakView{
