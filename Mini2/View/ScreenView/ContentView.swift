@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentStudySession = 0
+    @State private var currentBreakSession = 0
+    var totalStudySession:Int
+    var totalBreakSession:Int
+    var studySessionTime:[Int]
+    var breakSessionTime:[Int]
+    var currentSession:String
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if(self.assignView() == "study"){
+            StudySessionTimerView(currentSession: 0, studyTime: 1, totalSession: 1)
+                .onAppear(perform: {
+                    currentStudySession+=1
+                })
+        } else if(self.assignView() == "break"){
+            BreakTimerView()
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
+extension ContentView{
+    func assignView()->String{
+        if(currentSession == "break" && currentStudySession <= totalStudySession){
+//            currentStudySession += 1
+            return "study"
+        } else if(currentSession == "study" && currentBreakSession <= totalBreakSession){
+            currentBreakSession += 1
+            return "break"
+        }
+        
+        return ""
+    }
 }
