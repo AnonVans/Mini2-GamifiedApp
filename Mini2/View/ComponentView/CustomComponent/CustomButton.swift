@@ -7,16 +7,6 @@
 
 import SwiftUI
 
-enum ButtonType {
-    case Solid
-    case Outline
-}
-
-enum ButtonSize {
-    case Large
-    case Medium
-}
-
 struct CustomButton: View {
     var type: ButtonType = .Outline
     var size: ButtonSize = .Large

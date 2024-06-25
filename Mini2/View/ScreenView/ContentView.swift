@@ -8,14 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    var hapticManager = HapticsManager()
+    @State var signal = false
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+            
+//            TimerComponent(signal: $signal)
+//            
+//            Button("Test Haptic") {
+//                hapticManager.playStudyHaptics()
+//            }
+//            .buttonStyle(BorderedProminentButtonStyle())
+//            
+//            Button("Stop Haptic") {
+//                hapticManager.stopStudyHaptics()
+//            }
+//            .buttonStyle(BorderedProminentButtonStyle())
         }
-        .padding()
+//        .padding()
+//        .onChange(of: signal) { oldValue, newValue in
+//            hapticManager.playStudyHaptics()
+//        }
     }
 }
 

@@ -13,12 +13,15 @@
 		C81B92082C24119D00282A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81B92072C24119D00282A88 /* Preview Assets.xcassets */; };
 		C81B92192C24920900282A88 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92182C24920900282A88 /* CustomButton.swift */; };
 		C81E9BB32C2597A4008F45C4 /* EggCatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E9BB22C2597A4008F45C4 /* EggCatchViewModel.swift */; };
-		C81E9BB52C2597C6008F45C4 /* UserModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E9BB42C2597C6008F45C4 /* UserModelData.swift */; };
+		C81E9BB52C2597C6008F45C4 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E9BB42C2597C6008F45C4 /* UserDataModel.swift */; };
 		C88CA5872C268FC500815471 /* BreakSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA5862C268FC500815471 /* BreakSessionView.swift */; };
 		C88CA5892C268FD200815471 /* BreakEndActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA5882C268FD200815471 /* BreakEndActionView.swift */; };
 		C88CA58B2C26914E00815471 /* EggGachaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58A2C26914E00815471 /* EggGachaView.swift */; };
 		C88CA58D2C2692B800815471 /* TimerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58C2C2692B800815471 /* TimerComponent.swift */; };
 		C88CA5902C2698B200815471 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58F2C2698B200815471 /* Extensions.swift */; };
+		C8F19EE42C29508C00F80627 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE32C29508C00F80627 /* Config.swift */; };
+		C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE52C2976A500F80627 /* ObjectModel.swift */; };
+		C8F19EE82C2980B300F80627 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE72C2980B300F80627 /* HapticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +32,16 @@
 		C81B92072C24119D00282A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C81B92182C24920900282A88 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C81E9BB22C2597A4008F45C4 /* EggCatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCatchViewModel.swift; sourceTree = "<group>"; };
-		C81E9BB42C2597C6008F45C4 /* UserModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelData.swift; sourceTree = "<group>"; };
+		C81E9BB42C2597C6008F45C4 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		C88CA5862C268FC500815471 /* BreakSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakSessionView.swift; sourceTree = "<group>"; };
 		C88CA5882C268FD200815471 /* BreakEndActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakEndActionView.swift; sourceTree = "<group>"; };
 		C88CA58A2C26914E00815471 /* EggGachaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggGachaView.swift; sourceTree = "<group>"; };
 		C88CA58C2C2692B800815471 /* TimerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponent.swift; sourceTree = "<group>"; };
 		C88CA58F2C2698B200815471 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C8F19EE32C29508C00F80627 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		C8F19EE52C2976A500F80627 /* ObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModel.swift; sourceTree = "<group>"; };
+		C8F19EE72C2980B300F80627 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		C8F19EEA2C29EE5900F80627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +74,13 @@
 		C81B91FF2C24119C00282A88 /* Mini2 */ = {
 			isa = PBXGroup;
 			children = (
+				C8F19EEA2C29EE5900F80627 /* Info.plist */,
 				C81B92002C24119C00282A88 /* Mini2App.swift */,
 				C81B920E2C24128400282A88 /* Model */,
 				C81B920F2C24128B00282A88 /* View */,
 				C81B92102C24129100282A88 /* ViewModel */,
 				C88CA58E2C26987300815471 /* Manager */,
+				C8F19EE92C29987200F80627 /* Resource */,
 				C81B92042C24119D00282A88 /* Assets.xcassets */,
 				C81B92062C24119D00282A88 /* Preview Content */,
 			);
@@ -89,7 +98,8 @@
 		C81B920E2C24128400282A88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C81E9BB42C2597C6008F45C4 /* UserModelData.swift */,
+				C81E9BB42C2597C6008F45C4 /* UserDataModel.swift */,
+				C8F19EE52C2976A500F80627 /* ObjectModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,8 +153,17 @@
 			isa = PBXGroup;
 			children = (
 				C88CA58F2C2698B200815471 /* Extensions.swift */,
+				C8F19EE32C29508C00F80627 /* Config.swift */,
+				C8F19EE72C2980B300F80627 /* HapticsManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		C8F19EE92C29987200F80627 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,14 +236,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C81E9BB52C2597C6008F45C4 /* UserModelData.swift in Sources */,
+				C81E9BB52C2597C6008F45C4 /* UserDataModel.swift in Sources */,
 				C81E9BB32C2597A4008F45C4 /* EggCatchViewModel.swift in Sources */,
 				C88CA5892C268FD200815471 /* BreakEndActionView.swift in Sources */,
 				C81B92192C24920900282A88 /* CustomButton.swift in Sources */,
+				C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */,
 				C88CA5872C268FC500815471 /* BreakSessionView.swift in Sources */,
 				C88CA5902C2698B200815471 /* Extensions.swift in Sources */,
 				C81B92032C24119C00282A88 /* ContentView.swift in Sources */,
 				C81B92012C24119C00282A88 /* Mini2App.swift in Sources */,
+				C8F19EE82C2980B300F80627 /* HapticsManager.swift in Sources */,
+				C8F19EE42C29508C00F80627 /* Config.swift in Sources */,
 				C88CA58D2C2692B800815471 /* TimerComponent.swift in Sources */,
 				C88CA58B2C26914E00815471 /* EggGachaView.swift in Sources */,
 			);
@@ -363,6 +385,7 @@
 				DEVELOPMENT_TEAM = 2PK9G249Q5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mini2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -392,6 +415,7 @@
 				DEVELOPMENT_TEAM = 2PK9G249Q5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mini2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

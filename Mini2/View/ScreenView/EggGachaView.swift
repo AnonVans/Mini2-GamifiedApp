@@ -7,13 +7,8 @@
 
 import SwiftUI
 
-enum GachaState {
-    case ChooseEggs
-    case OpenEggs
-}
-
 struct EggGachaView: View {
-    @State var gachaState: GachaState = .ChooseEggs
+    @State var gachaState: SessionState = .ChooseEggs
     @State var chosenEgg: String?
     
     //Make eggs array to iterate
@@ -21,18 +16,20 @@ struct EggGachaView: View {
     
     var body: some View {
         
-        switch gachaState {
-        case .ChooseEggs:
-            ChooseEggView(gachaState: $gachaState, prizeEgg: $chosenEgg, eggs: eggs)
-        case .OpenEggs:
-            EggRevealView(chosenGachaEgg: chosenEgg)
-        }
+        Text("Hello World")
+        
+//        switch gachaState {
+//        case .ChooseEggs:
+//            ChooseEggView(gachaState: $gachaState, prizeEgg: $chosenEgg, eggs: eggs)
+//        case .OpenEggs:
+//            EggRevealView(chosenGachaEgg: chosenEgg)
+//        }
         
     }
 }
 
 struct ChooseEggView: View {
-    @Binding var gachaState: GachaState
+    @Binding var gachaState: SessionState
     @Binding var prizeEgg: String?
     
     var eggs = [String]()
@@ -90,9 +87,27 @@ struct EggRevealView: View {
     @State var chosenGachaEgg: String?
    
     var body: some View {
-        Text(chosenGachaEgg ?? "No Egg??")
+        VStack {
+            Spacer()
+            
+            Text("Yeay!!")
+                .font(.system(size: 40))
+                .foregroundStyle(.primary6)
+                .bold()
+            
+            Spacer()
+            
+            //Chicken Block
+            
+            Spacer()
+            
+            CustomButton(type: .Solid, text: "Use")
+            CustomButton(type: .Outline, text: "Skip")
+            
+            Spacer()
+        }
     }
 }
 #Preview {
-    EggGachaView()
+    EggRevealView()
 }

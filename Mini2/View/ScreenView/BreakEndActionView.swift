@@ -7,28 +7,22 @@
 
 import SwiftUI
 
-enum BreakState {
-    case Activity
-    case ActivitySuccess
-    case ActivityFailed
-}
-
 struct BreakEndActionView: View {
-    @State var state: BreakState = .Activity
+    @State var state: SessionState = .BreakActivity
     
     var body: some View {
         ZStack {
             Color.primaryBG
                 .ignoresSafeArea()
             
-            switch state {
-            case .Activity:
-                BreakOverActivity(signal: $state)
-            case .ActivitySuccess:
-                BreakEndSuccessView()
-            case .ActivityFailed:
-                BreakEndFailedView()
-            }
+//            switch state {
+//            case .BreakActivity:
+//                BreakOverActivity(signal: $state)
+//            case .BreakActivitySuccess:
+//                BreakEndSuccessView()
+//            case .BreakActivityFailed:
+//                BreakEndFailedView()
+//            }
         }
         .navigationBarBackButtonHidden()
     }
@@ -38,7 +32,7 @@ struct BreakOverActivity: View {
     @State var foxSize = 150.0
     @State var timer: Timer?
     @State var limitCounter = 0
-    @Binding var signal: BreakState
+//    @Binding var signal: SessionState
     
     var body: some View {
         ZStack {
@@ -57,10 +51,10 @@ struct BreakOverActivity: View {
                         }
                     })
                 }
-                .onChange(of: foxSize) { oldValue, newValue in
+                .onChange(of: limitCounter) { oldValue, newValue in
                     if limitCounter == 30 {
                         stopTimer()
-                        signal = .ActivityFailed
+//                        signal = .BreakActivityFailed
                     }
                 }
             
@@ -72,7 +66,7 @@ struct BreakOverActivity: View {
         .onTapGesture {
             if foxSize < 50{
                 stopTimer()
-                signal = .ActivitySuccess
+//                signal = .BreakActivitySuccess
             } else {
                 foxSize -= 15
             }
@@ -117,5 +111,5 @@ struct BreakEndFailedView: View {
 }
 
 #Preview {
-    BreakEndActionView()
+    BreakOverActivity()
 }

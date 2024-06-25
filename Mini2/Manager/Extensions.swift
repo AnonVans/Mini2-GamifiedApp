@@ -8,10 +8,6 @@
 import Foundation
 import SwiftUI
 
-extension Text {
-    
-}
-
 extension ButtonType {
     var fill : Color {
         return (self == .Solid) ? .primary5 : .white

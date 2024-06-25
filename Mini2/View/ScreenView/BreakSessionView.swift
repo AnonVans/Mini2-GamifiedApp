@@ -13,19 +13,47 @@ struct BreakSessionView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                Color.primaryBG
+                    .ignoresSafeArea()
+                
+                //Chicken Image
+                Rectangle()
+                    .frame(width: 175, height: 190)
+                    .offset(y: -50)
+                
+                LinearGradient(
+                    colors: [.clear, .primaryBG],
+                    startPoint: UnitPoint(x: 0.48, y: 0),
+                    endPoint: UnitPoint(x: 0.48, y: 0.5)
+                )
+                    .frame(height: 200)
+                
                 VStack {
-                    Text("Have a nice break!")
-                        .font(.system(size: 40))
-                        .bold()
+                    Text("Break Time!")
+                        .font(.system(size: 27))
+                        .fontWeight(.semibold)
+                        .foregroundStyle(.primary6)
+                        .offset(y: 60)
                     
-                    TimerComponent(currDuration: 5, signal: $timerSignal)
+                    Spacer()
                     
-                    
+                    VStack {
+                        TimerComponent(currDuration: 5, signal: $timerSignal)
+                            .padding(2)
+                        
+                        Text("You know what?\nChickens have good time management, we will rest strict to schedule")
+                            .font(Font.custom("SF Pro Rounded", size: 19))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.primary5)
+                            .frame(width: 230, alignment: .top)
+                    }
+                    .offset(y: 60)
+                    Spacer()
                 }
             }
-            .navigationDestination(isPresented: $timerSignal) {
-                BreakEndActionView(state: .Activity)
-            }
+//            .navigationDestination(isPresented: $timerSignal) {
+//                BreakEndActionView(state: .Activity)
+//            }
         }
     }
 }

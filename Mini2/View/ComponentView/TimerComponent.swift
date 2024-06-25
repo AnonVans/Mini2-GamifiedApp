@@ -16,7 +16,8 @@ struct TimerComponent: View {
         VStack {
             Text(String(format: "%02d:%02d", currDuration/60, currDuration%60))
 //                .font(Font.custom("SF Pro Rounded", size: 128))
-                .font(.system(size: 128))
+                .font(.system(size: 48))
+                .bold()
                 .foregroundStyle(.primary6)
                 .onAppear {
                     timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
@@ -35,9 +36,6 @@ struct TimerComponent: View {
                         }
                     }
                 }
-            
-            Text("Minutes Left")
-                .font(.system(size: 40))
         }
     }
 }
