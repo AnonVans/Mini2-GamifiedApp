@@ -1,7 +1,7 @@
 [
     {
         "chicken":{
-            "skin": "Business",
+            "skin": "Default",
             "state": "Normal",
             "pose": "LookLeft"
         }
@@ -10,7 +10,7 @@
     
     {
         "chicken":{
-            "skin": "Default",
+            "skin": "Business",
             "state": "Normal",
             "pose": "LookLeft"
         }

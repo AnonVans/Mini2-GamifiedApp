@@ -19,6 +19,9 @@ struct EggCatchingView: View {
     @State private var currentEggIndex: Int = 0
     @State private var chickenPositions: [CGPoint] = Array(repeating: CGPoint(x: 100, y: 100), count: 3)
     @State private var eggCounter = 0
+    @State private var eggBroken: [Bool] = Array(repeating: false, count: 3)
+    @State private var brokenEggPositions: [CGPoint] = Array(repeating: CGPoint(x: 0, y: 650), count: 3)
+    
     
     var body: some View {
         ZStack{
@@ -30,6 +33,9 @@ struct EggCatchingView: View {
                 Image("Ayam")
                     .padding(.top, 50)
                     .position(CGPoint(x: 200.0, y: 100.0))
+//                Image("telorpecah")
+//                    .resizable()
+//                    .frame(width: 190, height: 90)
                 
                 HStack{
                     Image("leftarrow")
@@ -82,12 +88,20 @@ struct EggCatchingView: View {
                                     .padding(.top, 50)
                                     .position(chickenPositions[index])
                                     .opacity(index <= currentEggIndex && !eggDisappear[index] ? 1 : 0)
+                                
+                                Image("telorpecah")
+                                    .resizable()
+                                    .frame(width: 190, height: 90)
+                                    .position(brokenEggPositions[index])
+                                    .opacity(eggBroken[index] ? 1 : 0)
+                                    .animation(.easeInOut, value: eggBroken)
                             }
                         }
                         .onAppear {
                             for i in 0..<eggPositions.count {
                                 eggPositions[i].x = CGFloat.random(in: 50..<351)
                                 chickenPositions[i].x = eggPositions[i].x
+                                brokenEggPositions[i].x = eggPositions[i].x
                             }
                         }
                         .onReceive(eggTimer) { _ in
@@ -99,12 +113,9 @@ struct EggCatchingView: View {
                                     
                                     currentEggIndex += 1
                                 }
-                                
-                                
-                                
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                                    eggDisappear[currentEggIndex - 1] = true
-                                                }
+                                    eggDisappear[currentEggIndex - 1] = true
+                                }
                             }
                         }
                     }
@@ -121,8 +132,10 @@ struct EggCatchingView: View {
             print("yesss")
             print("\(basketPosition.x) and \(eggPositions[currentEggIndex].x)")
         } else {
-            print("no")
-            print("\(basketPosition.x) and \(eggPositions[currentEggIndex].x)")
+            eggBroken[currentEggIndex] = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                eggBroken[currentEggIndex] = false
+            }
         }
         
         print("eggcounter: \(eggCounter)")
