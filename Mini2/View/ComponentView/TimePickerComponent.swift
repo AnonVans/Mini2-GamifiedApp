@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct TimePickerComponent: View {
-    @State private var selectedHour = 0
-    private let hours = Array(0..<7)
+    private let hours = Array(1..<7)
+    var timeAssignVM = TimeAssignmentViewModel.getInstance()
+
+    @State private var selectedHour = 1
+    @State private var totalSession = 3
     
     // Function to calculate learning and break cycles
     func calculateCycles(for hours: Int) -> Int  {
@@ -31,10 +34,9 @@ struct TimePickerComponent: View {
                 .cornerRadius(12)
                 .shadow(color: Color.black.opacity(0.3), radius: 2, x: 3, y: 4)
                 .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                .inset(by: -0.5)
-                .stroke(.white, lineWidth: 4)
-
+                    RoundedRectangle(cornerRadius: 12)
+                        .inset(by: -0.5)
+                        .stroke(.white, lineWidth: 4)
                 )
                
             
@@ -46,6 +48,10 @@ struct TimePickerComponent: View {
             }
             .pickerStyle(WheelPickerStyle())
             .frame(width: 200, height: 120)
+            .onChange(of: selectedHour) { oldValue, newValue in
+                timeAssignVM.timeAssignment(selectedHour)
+                totalSession = timeAssignVM.totalSession
+            }
             
         }
         .padding(.bottom, 20)
@@ -99,14 +105,12 @@ struct TimePickerComponent: View {
                         Text("Cycle")
                     }
                 }
-
-                
                 
                 Spacer()
                 VStack (alignment: .trailing, spacing: 10) {
                     Text("25 min")
                     Text("5 min")
-                    Text("\(calculateCycles(for: selectedHour)) times")
+                    Text(String(totalSession))
                 }
 
             }

@@ -55,7 +55,7 @@ struct StudySessionTimerView: View {
                                 timeRemaining -= 1
                             } else if(timeRemaining == 0){
                                 sessionFinished = true
-                                vm.currentStudySession += 1
+//                                vm.currentStudySession += 1
                             }
                         }
                         .onAppear(perform: {
