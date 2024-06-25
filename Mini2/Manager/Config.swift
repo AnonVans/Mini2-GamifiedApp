@@ -35,7 +35,6 @@ enum ChickenSkin: String {
 enum ChickentState: String {
     case Normal = "Normal"
     case Happy = "Happy"
-    case worried = "Worried"
     case Scared = "Scared"
 }
 
@@ -47,9 +46,9 @@ enum ChickenPose: String {
 
 enum SessionState {
     case StudySession
-    case CallToBreak
-    case LateToBreak
+    case StudyActivity
     case EggCatch
+    case LateToBreak
     case FailedToCatch
     case ChooseEggs
     case OpenEggs

@@ -11,6 +11,8 @@
 		C813AD022C2A8ABA0096997D /* TimePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813ACFF2C2A8ABA0096997D /* TimePickerComponent.swift */; };
 		C813AD042C2A8B910096997D /* SetTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813AD032C2A8B910096997D /* SetTimerView.swift */; };
 		C813AD062C2A8BA70096997D /* StudySessionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813AD052C2A8BA70096997D /* StudySessionPageView.swift */; };
+		C813AD082C2AAAD70096997D /* EggGachaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813AD072C2AAAD70096997D /* EggGachaViewModel.swift */; };
+		C813AD0A2C2ABBAB0096997D /* EggRevealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813AD092C2ABBAB0096997D /* EggRevealView.swift */; };
 		C81B92012C24119C00282A88 /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92002C24119C00282A88 /* Mini2App.swift */; };
 		C81B92052C24119D00282A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81B92042C24119D00282A88 /* Assets.xcassets */; };
 		C81B92082C24119D00282A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81B92072C24119D00282A88 /* Preview Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		C813ACFF2C2A8ABA0096997D /* TimePickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerComponent.swift; sourceTree = "<group>"; };
 		C813AD032C2A8B910096997D /* SetTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimerView.swift; sourceTree = "<group>"; };
 		C813AD052C2A8BA70096997D /* StudySessionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySessionPageView.swift; sourceTree = "<group>"; };
+		C813AD072C2AAAD70096997D /* EggGachaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggGachaViewModel.swift; sourceTree = "<group>"; };
+		C813AD092C2ABBAB0096997D /* EggRevealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggRevealView.swift; sourceTree = "<group>"; };
 		C81B91FD2C24119C00282A88 /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C81B92002C24119C00282A88 /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
 		C81B92042C24119D00282A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3599ED2C27D0480026E929 /* TimeAssignmentViewModel.swift */,
+				C813AD072C2AAAD70096997D /* EggGachaViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -162,9 +167,10 @@
 			children = (
 				C84985742C2A85EB0011B300 /* StudySessionTimerView.swift */,
 				C84985702C2A85EB0011B300 /* BeforeBreakView.swift */,
+				C84985782C2A85EB0011B300 /* EggGachaView.swift */,
+				C813AD092C2ABBAB0096997D /* EggRevealView.swift */,
 				C84985772C2A85EB0011B300 /* BreakSessionView.swift */,
 				C84985762C2A85EB0011B300 /* BreakEndActionView.swift */,
-				C84985782C2A85EB0011B300 /* EggGachaView.swift */,
 			);
 			path = SessionStateView;
 			sourceTree = "<group>";
@@ -276,9 +282,11 @@
 				C84985842C2A85EB0011B300 /* StudySessionTimerView.swift in Sources */,
 				C813AD062C2A8BA70096997D /* StudySessionPageView.swift in Sources */,
 				C849857F2C2A85EB0011B300 /* DraggableView.swift in Sources */,
+				C813AD0A2C2ABBAB0096997D /* EggRevealView.swift in Sources */,
 				C849857E2C2A85EB0011B300 /* TimerComponent.swift in Sources */,
 				C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */,
 				C84985862C2A85EB0011B300 /* BreakSessionView.swift in Sources */,
+				C813AD082C2AAAD70096997D /* EggGachaViewModel.swift in Sources */,
 				C88CA5902C2698B200815471 /* Extensions.swift in Sources */,
 				C81B92012C24119C00282A88 /* Mini2App.swift in Sources */,
 				C8F19EE82C2980B300F80627 /* HapticsManager.swift in Sources */,
@@ -429,7 +437,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +468,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

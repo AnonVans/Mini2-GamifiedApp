@@ -13,7 +13,7 @@ class TimeAssignmentViewModel: ObservableObject {
     @Published var studySessionTotal: Int = 2
     @Published var breakSessionTotal: Int = 1
     @Published var studyTimeinMinutes = 60
-    @Published var currentSession = 1
+    @Published var currentSession = 0
     @Published var totalSession = 3
 //    @Published var studySessionTime:[Int] = []
 //    @Published var breakSessionTime:[Int] = []
@@ -90,12 +90,20 @@ class TimeAssignmentViewModel: ObservableObject {
         self.currentSession += 1
     }
     
+    func checkEndSession() -> Bool {
+        if self.currentSession == self.totalSession {
+            return true
+        }
+        return false
+    }
+    
     func getSessionDuration() -> Int {
         if currentSession%2 == 1 {
             //Return Study Session
             if studyTimeinMinutes > 30 {
                 self.studyTimeinMinutes -= 25
-                return 25*60
+                return 5
+//                return 25*60
             } else {
                 self.studyTimeinMinutes = 0
                 return self.studyTimeinMinutes*60
@@ -105,10 +113,12 @@ class TimeAssignmentViewModel: ObservableObject {
             let currBreak = getBreakSession()
             if currBreak%4 == 0 {
                 self.studySessionTotal -= 15
-                return 15*60
+                return 5
+//                return 15*60
             } else {
                 self.studyTimeinMinutes -= 5
-                return 5*60
+                return 5
+//                return 5*60
             }
         }
     }

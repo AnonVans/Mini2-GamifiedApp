@@ -24,6 +24,15 @@ class HapticsManager {
         prepareHaptics()
     }
     
+    private static var hapticMng: HapticsManager?
+    
+    static func getIntance() -> HapticsManager {
+        if self.hapticMng == nil {
+            self.hapticMng = HapticsManager()
+        }
+        return self.hapticMng!
+    }
+    
     func prepareHaptics() {
         guard
             CHHapticEngine.capabilitiesForHardware().supportsHaptics,

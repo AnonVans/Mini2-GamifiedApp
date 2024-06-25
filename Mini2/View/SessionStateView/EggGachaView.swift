@@ -8,31 +8,9 @@
 import SwiftUI
 
 struct EggGachaView: View {
-    @State var gachaState: SessionState = .ChooseEggs
-    @State var chosenEgg: String?
+    var gachaVM = EggGachaViewModel.getInstance()
     
-    //Make eggs array to iterate
-    var eggs = ["1", "2", "3"]
-    
-    var body: some View {
-        
-        Text("Hello World")
-        
-//        switch gachaState {
-//        case .ChooseEggs:
-//            ChooseEggView(gachaState: $gachaState, prizeEgg: $chosenEgg, eggs: eggs)
-//        case .OpenEggs:
-//            EggRevealView(chosenGachaEgg: chosenEgg)
-//        }
-        
-    }
-}
-
-struct ChooseEggView: View {
-    @Binding var gachaState: SessionState
-    @Binding var prizeEgg: String?
-    
-    var eggs = [String]()
+    @Binding var sessionState: SessionState
     
     var body: some View {
         
@@ -63,12 +41,11 @@ struct ChooseEggView: View {
                 Spacer()
                 
                 HStack {
-                    ForEach(eggs, id: \.self) { egg in
+                    ForEach(Array(1...gachaVM.getEggAmount()), id: \.self) { egg in
                         Rectangle()
                             .frame(width: 75, height: 75)
                             .onTapGesture {
-                                gachaState = .OpenEggs
-                                prizeEgg = egg
+                                sessionState = .OpenEggs
                             }
                     }
                 }
@@ -83,31 +60,6 @@ struct ChooseEggView: View {
     }
 }
 
-struct EggRevealView: View {
-    @State var chosenGachaEgg: String?
-   
-    var body: some View {
-        VStack {
-            Spacer()
-            
-            Text("Yeay!!")
-                .font(.system(size: 40))
-                .foregroundStyle(.primary6)
-                .bold()
-            
-            Spacer()
-            
-            //Chicken Block
-            
-            Spacer()
-            
-            CustomButton(type: .Solid, text: "Use")
-            CustomButton(type: .Outline, text: "Skip")
-            
-            Spacer()
-        }
-    }
-}
-#Preview {
-    EggRevealView()
-}
+//#Preview {
+//    EggGachaView()
+//}

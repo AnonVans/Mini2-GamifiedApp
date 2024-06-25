@@ -7,18 +7,25 @@
 
 import SwiftUI
 
+enum TimerType: String {
+    case Swiper = "Swipe"
+    case Regular = "Reg"
+}
+
 struct TimerComponent: View {
     @State var currDuration = 15
     @State var timer: Timer?
     @Binding var signal: Bool
     
+    var type: TimerType = .Regular
+    
     var body: some View {
         VStack {
             Text(String(format: "%02d:%02d", currDuration/60, currDuration%60))
 //                .font(Font.custom("SF Pro Rounded", size: 128))
-                .font(.system(size: 48))
+                .font(.system(size: type.rawValue == "Swipe" ? 33 : 48))
                 .bold()
-                .foregroundStyle(.primary6)
+                .foregroundStyle(type.rawValue == "Swipe" ? .primary5 : .primary6)
                 .onAppear {
                     timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
                         if currDuration > 0 {

@@ -8,32 +8,13 @@
 import SwiftUI
 
 struct BreakEndActionView: View {
-    @State var state: SessionState = .BreakActivity
-    
-    var body: some View {
-        ZStack {
-            Color.primaryBG
-                .ignoresSafeArea()
-            
-//            switch state {
-//            case .BreakActivity:
-//                BreakOverActivity(signal: $state)
-//            case .BreakActivitySuccess:
-//                BreakEndSuccessView()
-//            case .BreakActivityFailed:
-//                BreakEndFailedView()
-//            }
-        }
-        .navigationBarBackButtonHidden()
-    }
-}
-
-struct BreakOverActivity: View {
     @State var foxSize = 150.0
     @State var timer: Timer?
     @State var limitCounter = 0
-//    @Binding var signal: SessionState
+    @State var timerSignal: Bool = false
     
+    @Binding var sessionState: SessionState
+
     var body: some View {
         ZStack {
             Color.primaryBG
@@ -43,30 +24,51 @@ struct BreakOverActivity: View {
                 .frame(width: foxSize, height: foxSize)
                 .foregroundStyle(.orange)
                 .onAppear {
-                    timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { _ in
+                    timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
                         limitCounter += 1
                         
                         withAnimation(.spring()) {
-                            foxSize += 10
+                            foxSize += 5
                         }
                     })
                 }
                 .onChange(of: limitCounter) { oldValue, newValue in
                     if limitCounter == 30 {
                         stopTimer()
-//                        signal = .BreakActivityFailed
+                        sessionState = .BreakActivityFailed
                     }
                 }
             
-//            Circle()
-//                .frame(width: 150, height: 150)
-//                .foregroundStyle(.yellow5)
-//                .offset(y: 75)
+            VStack {
+                Text("Save your chicken!")
+                  .font(.system(size: 27))
+                  .fontWeight(.semibold)
+                  .foregroundColor(.primary6)
+                  .frame(width: 250, alignment: .top)
+                  .padding(.top, 35)
+                
+                TimerComponent(currDuration: 30, signal: $timerSignal, type: .Swiper)
+                    .padding(1)
+                
+                Spacer()
+                
+                Image(systemName: "hand.tap")
+                    .font(.system(size: 50))
+                    .frame(width: 49, height: 65)
+                    .foregroundStyle(.primary6)
+                
+                Text("Quick Tap Swiper!")
+                    .font(.system(size: 16))
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(red: 0.19, green: 0.44, blue: 0.83))
+                    .padding(.bottom, 25)
+            }
+            
         }
         .onTapGesture {
             if foxSize < 50{
                 stopTimer()
-//                signal = .BreakActivitySuccess
+                sessionState = .BreakActivitySuccess
             } else {
                 foxSize -= 15
             }
@@ -80,6 +82,9 @@ struct BreakOverActivity: View {
 }
 
 struct BreakEndSuccessView: View {
+    
+    @Binding var sessionState: SessionState
+    
     var body: some View {
         ZStack {
             VStack {
@@ -95,6 +100,9 @@ struct BreakEndSuccessView: View {
 }
 
 struct BreakEndFailedView: View {
+    
+    @Binding var sessionState: SessionState
+    
     var body: some View {
         ZStack {
             VStack {
@@ -110,6 +118,6 @@ struct BreakEndFailedView: View {
     }
 }
 
-#Preview {
-    BreakOverActivity()
-}
+//#Preview {
+//    BreakEndActionView()
+//}
