@@ -1,0 +1,91 @@
+[
+    {
+        "chicken":{
+            "skin": "Business",
+            "state": "Normal",
+            "pose": "LookLeft"
+        }
+    "locked": true
+    },
+    
+    {
+        "chicken":{
+            "skin": "Default",
+            "state": "Normal",
+            "pose": "LookLeft"
+        }
+    "locked": true
+    },
+    
+    {
+        "chicken":{
+            "skin": "Detective",
+            "state": "Normal",
+            "pose": "LookLeft"
+        }
+    "locked": true
+    },
+    
+    {
+        "chicken":{
+            "skin": "Egg",
+            "state": "Normal",
+            "pose": "LookLeft"
+        }
+    "locked": true
+    },
+    
+    {
+        "chicken":{
+            "skin": "Farmer",
+            "state": "Normal",
+            "pose": "LookLeft"
+        }
+    "locked": true
+    },
+    
+    {
+        "chicken":{
+            "skin": "Ironman",
+            "state": "Normal",
+            "pose": "LookLeft"
+        }
+    "locked": true
+    },
+    
+    {
+        "chicken":{
+            "skin": "Luffy",
+            "state": "Normal",
+            "pose": "LookLeft"
+        }
+    "locked": true
+    },
+    
+    {
+        "chicken":{
+            "skin": "Mermaid",
+            "state": "Normal",
+            "pose": "LookLeft"
+        }
+    "locked": true
+    },
+    
+    {
+        "chicken":{
+            "skin": "Nurse",
+            "state": "Normal",
+            "pose": "LookLeft"
+        }
+    "locked": true
+    },
+    
+    {
+        "chicken":{
+            "skin": "Romairama",
+            "state": "Normal",
+            "pose": "LookLeft"
+        }
+    "locked": true
+    }
+]
