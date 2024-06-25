@@ -7,24 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B3599E32C2691E30026E929 /* StudySessionTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3599E22C2691E30026E929 /* StudySessionTimerView.swift */; };
-		5B3599E72C2695E40026E929 /* BeforeBreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3599E62C2695E40026E929 /* BeforeBreakView.swift */; };
-		5B3599E92C26B71F0026E929 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3599E82C26B71F0026E929 /* DraggableView.swift */; };
 		5B3599EE2C27D0480026E929 /* TimeAssignmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3599ED2C27D0480026E929 /* TimeAssignmentViewModel.swift */; };
 		C81B92012C24119C00282A88 /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92002C24119C00282A88 /* Mini2App.swift */; };
-		C81B92032C24119C00282A88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92022C24119C00282A88 /* ContentView.swift */; };
 		C81B92052C24119D00282A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81B92042C24119D00282A88 /* Assets.xcassets */; };
 		C81B92082C24119D00282A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81B92072C24119D00282A88 /* Preview Assets.xcassets */; };
 		C81E9BB32C2597A4008F45C4 /* EggCatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E9BB22C2597A4008F45C4 /* EggCatchViewModel.swift */; };
 		C81E9BB52C2597C6008F45C4 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E9BB42C2597C6008F45C4 /* UserDataModel.swift */; };
-		C849855A2C2A85AB0011B300 /* CollectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985582C2A85AB0011B300 /* CollectableItem.swift */; };
-		C849855B2C2A85AB0011B300 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985592C2A85AB0011B300 /* CongratulationsView.swift */; };
-		C849855F2C2A85B70011B300 /* BreakSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849855C2C2A85B70011B300 /* BreakSessionView.swift */; };
-		C84985602C2A85B70011B300 /* BreakEndActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849855D2C2A85B70011B300 /* BreakEndActionView.swift */; };
-		C84985612C2A85B70011B300 /* EggGachaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849855E2C2A85B70011B300 /* EggGachaView.swift */; };
-		C84985632C2A85CD0011B300 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985622C2A85CD0011B300 /* CustomButton.swift */; };
-		C84985662C2A85D80011B300 /* TimePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985642C2A85D80011B300 /* TimePickerComponent.swift */; };
-		C84985672C2A85D80011B300 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985652C2A85D80011B300 /* TimePicker.swift */; };
 		C849857B2C2A85EB0011B300 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985682C2A85EB0011B300 /* TimePicker.swift */; };
 		C849857C2C2A85EB0011B300 /* TimePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985692C2A85EB0011B300 /* TimePickerComponent.swift */; };
 		C849857D2C2A85EB0011B300 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849856B2C2A85EB0011B300 /* CustomButton.swift */; };
@@ -38,7 +26,6 @@
 		C84985852C2A85EB0011B300 /* BreakEndActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985762C2A85EB0011B300 /* BreakEndActionView.swift */; };
 		C84985862C2A85EB0011B300 /* BreakSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985772C2A85EB0011B300 /* BreakSessionView.swift */; };
 		C84985872C2A85EB0011B300 /* EggGachaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985782C2A85EB0011B300 /* EggGachaView.swift */; };
-		C88CA58D2C2692B800815471 /* TimerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58C2C2692B800815471 /* TimerComponent.swift */; };
 		C88CA5902C2698B200815471 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58F2C2698B200815471 /* Extensions.swift */; };
 		C8F19EE42C29508C00F80627 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE32C29508C00F80627 /* Config.swift */; };
 		C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE52C2976A500F80627 /* ObjectModel.swift */; };
@@ -46,25 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5B3599E22C2691E30026E929 /* StudySessionTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySessionTimerView.swift; sourceTree = "<group>"; };
-		5B3599E62C2695E40026E929 /* BeforeBreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeBreakView.swift; sourceTree = "<group>"; };
-		5B3599E82C26B71F0026E929 /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		5B3599ED2C27D0480026E929 /* TimeAssignmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAssignmentViewModel.swift; sourceTree = "<group>"; };
 		C81B91FD2C24119C00282A88 /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C81B92002C24119C00282A88 /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
-		C81B92022C24119C00282A88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C81B92042C24119D00282A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C81B92072C24119D00282A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C81E9BB22C2597A4008F45C4 /* EggCatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCatchViewModel.swift; sourceTree = "<group>"; };
 		C81E9BB42C2597C6008F45C4 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
-		C84985582C2A85AB0011B300 /* CollectableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectableItem.swift; sourceTree = "<group>"; };
-		C84985592C2A85AB0011B300 /* CongratulationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
-		C849855C2C2A85B70011B300 /* BreakSessionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BreakSessionView.swift; path = Mini2/View/SessionStateView/BreakSessionView.swift; sourceTree = SOURCE_ROOT; };
-		C849855D2C2A85B70011B300 /* BreakEndActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BreakEndActionView.swift; path = Mini2/View/SessionStateView/BreakEndActionView.swift; sourceTree = SOURCE_ROOT; };
-		C849855E2C2A85B70011B300 /* EggGachaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EggGachaView.swift; path = Mini2/View/SessionStateView/EggGachaView.swift; sourceTree = SOURCE_ROOT; };
-		C84985622C2A85CD0011B300 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Mini2/View/ComponentView/CustomButton.swift; sourceTree = SOURCE_ROOT; };
-		C84985642C2A85D80011B300 /* TimePickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerComponent.swift; sourceTree = "<group>"; };
-		C84985652C2A85D80011B300 /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		C84985682C2A85EB0011B300 /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		C84985692C2A85EB0011B300 /* TimePickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerComponent.swift; sourceTree = "<group>"; };
 		C849856B2C2A85EB0011B300 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -78,7 +53,6 @@
 		C84985762C2A85EB0011B300 /* BreakEndActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakEndActionView.swift; sourceTree = "<group>"; };
 		C84985772C2A85EB0011B300 /* BreakSessionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakSessionView.swift; sourceTree = "<group>"; };
 		C84985782C2A85EB0011B300 /* EggGachaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EggGachaView.swift; sourceTree = "<group>"; };
-		C88CA58C2C2692B800815471 /* TimerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComponent.swift; sourceTree = "<group>"; };
 		C88CA58F2C2698B200815471 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C8F19EE32C29508C00F80627 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C8F19EE52C2976A500F80627 /* ObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModel.swift; sourceTree = "<group>"; };
@@ -97,14 +71,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5B3599EA2C26B97E0026E929 /* HelperView */ = {
-			isa = PBXGroup;
-			children = (
-				5B3599E82C26B71F0026E929 /* DraggableView.swift */,
-			);
-			path = HelperView;
-			sourceTree = "<group>";
-		};
 		C81B91F42C24119C00282A88 = {
 			isa = PBXGroup;
 			children = (
@@ -158,9 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				C849857A2C2A85EB0011B300 /* View */,
-				5B3599EA2C26B97E0026E929 /* HelperView */,
-				C81B92112C24129900282A88 /* ScreenView */,
-				C81B92122C2412A100282A88 /* ComponentView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,40 +135,6 @@
 				5B3599ED2C27D0480026E929 /* TimeAssignmentViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		C81B92112C24129900282A88 /* ScreenView */ = {
-			isa = PBXGroup;
-			children = (
-				C849855D2C2A85B70011B300 /* BreakEndActionView.swift */,
-				C849855C2C2A85B70011B300 /* BreakSessionView.swift */,
-				C849855E2C2A85B70011B300 /* EggGachaView.swift */,
-				C84985582C2A85AB0011B300 /* CollectableItem.swift */,
-				C84985592C2A85AB0011B300 /* CongratulationsView.swift */,
-				C81B92022C24119C00282A88 /* ContentView.swift */,
-				5B3599E22C2691E30026E929 /* StudySessionTimerView.swift */,
-				5B3599E62C2695E40026E929 /* BeforeBreakView.swift */,
-			);
-			path = ScreenView;
-			sourceTree = "<group>";
-		};
-		C81B92122C2412A100282A88 /* ComponentView */ = {
-			isa = PBXGroup;
-			children = (
-				C88CA58C2C2692B800815471 /* TimerComponent.swift */,
-				C81B92172C2491DF00282A88 /* CustomComponent */,
-			);
-			path = ComponentView;
-			sourceTree = "<group>";
-		};
-		C81B92172C2491DF00282A88 /* CustomComponent */ = {
-			isa = PBXGroup;
-			children = (
-				C84985652C2A85D80011B300 /* TimePicker.swift */,
-				C84985642C2A85D80011B300 /* TimePickerComponent.swift */,
-				C84985622C2A85CD0011B300 /* CustomButton.swift */,
-			);
-			path = CustomComponent;
 			sourceTree = "<group>";
 		};
 		C849856A2C2A85EB0011B300 /* CustomComponent */ = {
@@ -355,39 +284,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C84985662C2A85D80011B300 /* TimePickerComponent.swift in Sources */,
-				C849855B2C2A85AB0011B300 /* CongratulationsView.swift in Sources */,
 				C81E9BB52C2597C6008F45C4 /* UserDataModel.swift in Sources */,
 				C84985802C2A85EB0011B300 /* BeforeBreakView.swift in Sources */,
 				C84985812C2A85EB0011B300 /* CollectableItem.swift in Sources */,
-				C849855A2C2A85AB0011B300 /* CollectableItem.swift in Sources */,
 				C849857D2C2A85EB0011B300 /* CustomButton.swift in Sources */,
-				C849855F2C2A85B70011B300 /* BreakSessionView.swift in Sources */,
 				5B3599EE2C27D0480026E929 /* TimeAssignmentViewModel.swift in Sources */,
 				C81E9BB52C2597C6008F45C4 /* UserDataModel.swift in Sources */,
 				C84985822C2A85EB0011B300 /* CongratulationsView.swift in Sources */,
 				C84985832C2A85EB0011B300 /* ContentView.swift in Sources */,
-				5B3599E32C2691E30026E929 /* StudySessionTimerView.swift in Sources */,
-				5B3599E92C26B71F0026E929 /* DraggableView.swift in Sources */,
 				C81E9BB32C2597A4008F45C4 /* EggCatchViewModel.swift in Sources */,
 				C84985842C2A85EB0011B300 /* StudySessionTimerView.swift in Sources */,
 				C849857B2C2A85EB0011B300 /* TimePicker.swift in Sources */,
 				C849857F2C2A85EB0011B300 /* DraggableView.swift in Sources */,
-				C84985672C2A85D80011B300 /* TimePicker.swift in Sources */,
-				C84985612C2A85B70011B300 /* EggGachaView.swift in Sources */,
-				C84985602C2A85B70011B300 /* BreakEndActionView.swift in Sources */,
-				C84985632C2A85CD0011B300 /* CustomButton.swift in Sources */,
-				5B3599E72C2695E40026E929 /* BeforeBreakView.swift in Sources */,
 				C849857E2C2A85EB0011B300 /* TimerComponent.swift in Sources */,
 				C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */,
 				C84985862C2A85EB0011B300 /* BreakSessionView.swift in Sources */,
 				C88CA5902C2698B200815471 /* Extensions.swift in Sources */,
-				C81B92032C24119C00282A88 /* ContentView.swift in Sources */,
 				C81B92012C24119C00282A88 /* Mini2App.swift in Sources */,
 				C849857C2C2A85EB0011B300 /* TimePickerComponent.swift in Sources */,
 				C8F19EE82C2980B300F80627 /* HapticsManager.swift in Sources */,
 				C8F19EE42C29508C00F80627 /* Config.swift in Sources */,
-				C88CA58D2C2692B800815471 /* TimerComponent.swift in Sources */,
 				C84985852C2A85EB0011B300 /* BreakEndActionView.swift in Sources */,
 				C84985872C2A85EB0011B300 /* EggGachaView.swift in Sources */,
 			);
