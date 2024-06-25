@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7DA6FDA92C297F82007AB2E0 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6FDA82C297F82007AB2E0 /* CongratulationsView.swift */; };
-		9CE864BE2C297F8C0060FBE4 /* TimePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE864BD2C297F8C0060FBE4 /* TimePickerComponent.swift */; };
-		9CE864C02C2981260060FBE4 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE864BF2C2981260060FBE4 /* TimePicker.swift */; };
 		9CE864C22C29816B0060FBE4 /* CollectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE864C12C29816B0060FBE4 /* CollectableItem.swift */; };
 		C81B92012C24119C00282A88 /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92002C24119C00282A88 /* Mini2App.swift */; };
 		C81B92032C24119C00282A88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92022C24119C00282A88 /* ContentView.swift */; };
@@ -26,12 +24,12 @@
 		C8F19EE42C29508C00F80627 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE32C29508C00F80627 /* Config.swift */; };
 		C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE52C2976A500F80627 /* ObjectModel.swift */; };
 		C8F19EE82C2980B300F80627 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE72C2980B300F80627 /* HapticsManager.swift */; };
+		C8F19EEE2C2A7FA200F80627 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EEC2C2A7FA200F80627 /* TimePicker.swift */; };
+		C8F19EEF2C2A7FA200F80627 /* TimePickerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EED2C2A7FA200F80627 /* TimePickerComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7DA6FDA82C297F82007AB2E0 /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
-		9CE864BD2C297F8C0060FBE4 /* TimePickerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerComponent.swift; sourceTree = "<group>"; };
-		9CE864BF2C2981260060FBE4 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		9CE864C12C29816B0060FBE4 /* CollectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableItem.swift; sourceTree = "<group>"; };
 		C81B91FD2C24119C00282A88 /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C81B92002C24119C00282A88 /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
@@ -50,6 +48,8 @@
 		C8F19EE52C2976A500F80627 /* ObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModel.swift; sourceTree = "<group>"; };
 		C8F19EE72C2980B300F80627 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		C8F19EEA2C29EE5900F80627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C8F19EEC2C2A7FA200F80627 /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimePicker.swift; path = CustomComponent/TimePicker.swift; sourceTree = "<group>"; };
+		C8F19EED2C2A7FA200F80627 /* TimePickerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimePickerComponent.swift; path = CustomComponent/TimePickerComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,10 +143,10 @@
 		C81B92122C2412A100282A88 /* ComponentView */ = {
 			isa = PBXGroup;
 			children = (
+				C8F19EEC2C2A7FA200F80627 /* TimePicker.swift */,
+				C8F19EED2C2A7FA200F80627 /* TimePickerComponent.swift */,
 				C88CA58C2C2692B800815471 /* TimerComponent.swift */,
 				C81B92182C24920900282A88 /* CustomButton.swift */,
-				9CE864BD2C297F8C0060FBE4 /* TimePickerComponent.swift */,
-				9CE864BF2C2981260060FBE4 /* TimePicker.swift */,
 			);
 			path = ComponentView;
 			sourceTree = "<group>";
@@ -249,12 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C81E9BB52C2597C6008F45C4 /* UserDataModel.swift in Sources */,
-				C81E9BB52C2597C6008F45C4 /* UserModelData.swift in Sources */,
+				C81E9BB52C2597C6008F45C4 /* UserDataModel.swift in Sources */,
+				C8F19EEE2C2A7FA200F80627 /* TimePicker.swift in Sources */,
 				9CE864C22C29816B0060FBE4 /* CollectableItem.swift in Sources */,
 				C81E9BB32C2597A4008F45C4 /* EggCatchViewModel.swift in Sources */,
 				C88CA5892C268FD200815471 /* BreakEndActionView.swift in Sources */,
-				9CE864C02C2981260060FBE4 /* TimePicker.swift in Sources */,
-				9CE864BE2C297F8C0060FBE4 /* TimePickerComponent.swift in Sources */,
 				C81B92192C24920900282A88 /* CustomButton.swift in Sources */,
 				C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */,
 				C88CA5872C268FC500815471 /* BreakSessionView.swift in Sources */,
@@ -263,6 +262,7 @@
 				7DA6FDA92C297F82007AB2E0 /* CongratulationsView.swift in Sources */,
 				C81B92012C24119C00282A88 /* Mini2App.swift in Sources */,
 				C8F19EE82C2980B300F80627 /* HapticsManager.swift in Sources */,
+				C8F19EEF2C2A7FA200F80627 /* TimePickerComponent.swift in Sources */,
 				C8F19EE42C29508C00F80627 /* Config.swift in Sources */,
 				C88CA58D2C2692B800815471 /* TimerComponent.swift in Sources */,
 				C88CA58B2C26914E00815471 /* EggGachaView.swift in Sources */,
