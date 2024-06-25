@@ -110,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				C81B92112C24129900282A88 /* ScreenView */,
+				C8F19EEB2C2A7EDD00F80627 /* SessionStateView */,
 				C81B92122C2412A100282A88 /* ComponentView */,
 			);
 			path = View;
@@ -127,9 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				C81B92022C24119C00282A88 /* ContentView.swift */,
-				C88CA5862C268FC500815471 /* BreakSessionView.swift */,
-				C88CA5882C268FD200815471 /* BreakEndActionView.swift */,
-				C88CA58A2C26914E00815471 /* EggGachaView.swift */,
 				7DA6FDA82C297F82007AB2E0 /* CongratulationsView.swift */,
 			);
 			path = ScreenView;
@@ -139,17 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				C88CA58C2C2692B800815471 /* TimerComponent.swift */,
-				C81B92172C2491DF00282A88 /* CustomComponent */,
-			);
-			path = ComponentView;
-			sourceTree = "<group>";
-		};
-		C81B92172C2491DF00282A88 /* CustomComponent */ = {
-			isa = PBXGroup;
-			children = (
 				C81B92182C24920900282A88 /* CustomButton.swift */,
 			);
-			path = CustomComponent;
+			path = ComponentView;
 			sourceTree = "<group>";
 		};
 		C88CA58E2C26987300815471 /* Manager */ = {
@@ -167,6 +157,16 @@
 			children = (
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		C8F19EEB2C2A7EDD00F80627 /* SessionStateView */ = {
+			isa = PBXGroup;
+			children = (
+				C88CA5862C268FC500815471 /* BreakSessionView.swift */,
+				C88CA5882C268FD200815471 /* BreakEndActionView.swift */,
+				C88CA58A2C26914E00815471 /* EggGachaView.swift */,
+			);
+			path = SessionStateView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
