@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7DA6FDA92C297F82007AB2E0 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6FDA82C297F82007AB2E0 /* CongratulationsView.swift */; };
 		9CE864C22C29816B0060FBE4 /* CollectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE864C12C29816B0060FBE4 /* CollectableItem.swift */; };
+		5B3599E32C2691E30026E929 /* StudySessionTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3599E22C2691E30026E929 /* StudySessionTimerView.swift */; };
+		5B3599E72C2695E40026E929 /* BeforeBreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3599E62C2695E40026E929 /* BeforeBreakView.swift */; };
+		5B3599E92C26B71F0026E929 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3599E82C26B71F0026E929 /* DraggableView.swift */; };
+		5B3599EE2C27D0480026E929 /* TimeAssignmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3599ED2C27D0480026E929 /* TimeAssignmentViewModel.swift */; };
 		C81B92012C24119C00282A88 /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92002C24119C00282A88 /* Mini2App.swift */; };
 		C81B92032C24119C00282A88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92022C24119C00282A88 /* ContentView.swift */; };
 		C81B92052C24119D00282A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81B92042C24119D00282A88 /* Assets.xcassets */; };
@@ -31,6 +35,10 @@
 /* Begin PBXFileReference section */
 		7DA6FDA82C297F82007AB2E0 /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
 		9CE864C12C29816B0060FBE4 /* CollectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableItem.swift; sourceTree = "<group>"; };
+		5B3599E22C2691E30026E929 /* StudySessionTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySessionTimerView.swift; sourceTree = "<group>"; };
+		5B3599E62C2695E40026E929 /* BeforeBreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeBreakView.swift; sourceTree = "<group>"; };
+		5B3599E82C26B71F0026E929 /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		5B3599ED2C27D0480026E929 /* TimeAssignmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAssignmentViewModel.swift; sourceTree = "<group>"; };
 		C81B91FD2C24119C00282A88 /* Mini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C81B92002C24119C00282A88 /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
 		C81B92022C24119C00282A88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B3599EA2C26B97E0026E929 /* HelperView */ = {
+			isa = PBXGroup;
+			children = (
+				5B3599E82C26B71F0026E929 /* DraggableView.swift */,
+			);
+			path = HelperView;
+			sourceTree = "<group>";
+		};
 		C81B91F42C24119C00282A88 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +131,7 @@
 		C81B920F2C24128B00282A88 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5B3599EA2C26B97E0026E929 /* HelperView */,
 				C81B92112C24129900282A88 /* ScreenView */,
 				C8F19EEB2C2A7EDD00F80627 /* SessionStateView */,
 				C81B92122C2412A100282A88 /* ComponentView */,
@@ -126,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				C81E9BB22C2597A4008F45C4 /* EggCatchViewModel.swift */,
+				5B3599ED2C27D0480026E929 /* TimeAssignmentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -136,6 +154,8 @@
 				C81B92022C24119C00282A88 /* ContentView.swift */,
 				7DA6FDA82C297F82007AB2E0 /* CongratulationsView.swift */,
 				9CE864C12C29816B0060FBE4 /* CollectableItem.swift */,
+				5B3599E22C2691E30026E929 /* StudySessionTimerView.swift */,
+				5B3599E62C2695E40026E929 /* BeforeBreakView.swift */,
 			);
 			path = ScreenView;
 			sourceTree = "<group>";
@@ -254,6 +274,7 @@
 				9CE864C22C29816B0060FBE4 /* CollectableItem.swift in Sources */,
 				C81E9BB32C2597A4008F45C4 /* EggCatchViewModel.swift in Sources */,
 				C88CA5892C268FD200815471 /* BreakEndActionView.swift in Sources */,
+				5B3599E72C2695E40026E929 /* BeforeBreakView.swift in Sources */,
 				C81B92192C24920900282A88 /* CustomButton.swift in Sources */,
 				C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */,
 				C88CA5872C268FC500815471 /* BreakSessionView.swift in Sources */,
@@ -440,7 +461,6 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
