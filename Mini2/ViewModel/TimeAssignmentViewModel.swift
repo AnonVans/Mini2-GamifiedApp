@@ -12,9 +12,12 @@ import SwiftUI
 class TimeAssignmentViewModel: ObservableObject {
     @Published var studySessionTotal: Int = 2
     @Published var breakSessionTotal: Int = 1
-    @Published var studyTimeinMinutes = 60
-    @Published var currentSession = 0
+    @Published var studyTimeinMinutes = 35
+    @Published var currentSession = 1
     @Published var totalSession = 3
+    
+    @Published var sessionOver = false
+    var sessionDuration = 5
 //    @Published var studySessionTime:[Int] = []
 //    @Published var breakSessionTime:[Int] = []
     
@@ -88,38 +91,48 @@ class TimeAssignmentViewModel: ObservableObject {
     
     func updateSession() {
         self.currentSession += 1
+        calculateSessionDuration()
+        print("Session: \(currentSession) || Remaining: \(studyTimeinMinutes)")
     }
     
-    func checkEndSession() -> Bool {
-        if self.currentSession == self.totalSession {
-            return true
+    func checkEndSession() {
+        if self.studyTimeinMinutes == 0 {
+            self.sessionOver = true
         }
-        return false
     }
     
-    func getSessionDuration() -> Int {
+    func calculateSessionDuration() {
         if currentSession%2 == 1 {
             //Return Study Session
             if studyTimeinMinutes > 30 {
                 self.studyTimeinMinutes -= 25
-                return 5
-//                return 25*60
+//                self.sessionDuration = 25*60
+                print("25 Minute Study")
+                self.sessionDuration = 5
             } else {
+//                self.sessionDuration = self.studyTimeinMinutes*60
                 self.studyTimeinMinutes = 0
-                return self.studyTimeinMinutes*60
+                print("Irregular Minute Study")
+                self.sessionDuration = 5
             }
         } else {
             //Return Break Session
             let currBreak = getBreakSession()
             if currBreak%4 == 0 {
-                self.studySessionTotal -= 15
-                return 5
-//                return 15*60
+                self.studyTimeinMinutes -= 15
+//                self.sessionDuration = 15*60
+                print("15 Minute Break")
+                self.sessionDuration = 5
             } else {
                 self.studyTimeinMinutes -= 5
-                return 5
-//                return 5*60
+//                self.sessionDuration = 5*60
+                print("5 Minute Break")
+                self.sessionDuration = 5
             }
         }
+    }
+    
+    func resetCurrentSession() {
+        self.currentSession = 1
     }
 }

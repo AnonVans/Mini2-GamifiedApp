@@ -85,6 +85,8 @@ struct BreakEndSuccessView: View {
     
     @Binding var sessionState: SessionState
     
+    var timeAssignVM = TimeAssignmentViewModel.getInstance()
+    
     var body: some View {
         ZStack {
             VStack {
@@ -94,6 +96,10 @@ struct BreakEndSuccessView: View {
                 Text("Your items are safe from Swipper")
                 
                 CustomButton(width: 200, text: "Study Session")
+                    .onTapGesture {
+                        timeAssignVM.updateSession()
+                        sessionState = .StudySession
+                    }
             }
         }
     }
@@ -102,6 +108,8 @@ struct BreakEndSuccessView: View {
 struct BreakEndFailedView: View {
     
     @Binding var sessionState: SessionState
+    
+    var timeAssignVM = TimeAssignmentViewModel.getInstance()
     
     var body: some View {
         ZStack {
@@ -113,6 +121,10 @@ struct BreakEndFailedView: View {
                 Text("ft. Steven He")
                 
                 CustomButton(width: 200, text: "Study Session")
+                    .onTapGesture {
+                        timeAssignVM.updateSession()
+                        sessionState = .StudySession
+                    }
             }
         }
     }

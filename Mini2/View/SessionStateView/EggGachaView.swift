@@ -15,9 +15,6 @@ struct EggGachaView: View {
     var body: some View {
         
         ZStack {
-            Color.primaryBG
-                .ignoresSafeArea()
-            
             VStack {
                 Spacer()
                 

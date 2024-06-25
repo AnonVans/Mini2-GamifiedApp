@@ -27,6 +27,8 @@
 		C84985852C2A85EB0011B300 /* BreakEndActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985762C2A85EB0011B300 /* BreakEndActionView.swift */; };
 		C84985862C2A85EB0011B300 /* BreakSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985772C2A85EB0011B300 /* BreakSessionView.swift */; };
 		C84985872C2A85EB0011B300 /* EggGachaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985782C2A85EB0011B300 /* EggGachaView.swift */; };
+		C84AF7172C2B2F26004D8489 /* EggCatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7162C2B2F26004D8489 /* EggCatchView.swift */; };
+		C84AF7192C2B3ABC004D8489 /* BasketDragViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7182C2B3ABC004D8489 /* BasketDragViewModel.swift */; };
 		C88CA5902C2698B200815471 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58F2C2698B200815471 /* Extensions.swift */; };
 		C8F19EE42C29508C00F80627 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE32C29508C00F80627 /* Config.swift */; };
 		C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE52C2976A500F80627 /* ObjectModel.swift */; };
@@ -56,6 +58,8 @@
 		C84985762C2A85EB0011B300 /* BreakEndActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakEndActionView.swift; sourceTree = "<group>"; };
 		C84985772C2A85EB0011B300 /* BreakSessionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakSessionView.swift; sourceTree = "<group>"; };
 		C84985782C2A85EB0011B300 /* EggGachaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EggGachaView.swift; sourceTree = "<group>"; };
+		C84AF7162C2B2F26004D8489 /* EggCatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCatchView.swift; sourceTree = "<group>"; };
+		C84AF7182C2B3ABC004D8489 /* BasketDragViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDragViewModel.swift; sourceTree = "<group>"; };
 		C88CA58F2C2698B200815471 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C8F19EE32C29508C00F80627 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C8F19EE52C2976A500F80627 /* ObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModel.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			children = (
 				5B3599ED2C27D0480026E929 /* TimeAssignmentViewModel.swift */,
 				C813AD072C2AAAD70096997D /* EggGachaViewModel.swift */,
+				C84AF7182C2B3ABC004D8489 /* BasketDragViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			children = (
 				C84985742C2A85EB0011B300 /* StudySessionTimerView.swift */,
 				C84985702C2A85EB0011B300 /* BeforeBreakView.swift */,
+				C84AF7162C2B2F26004D8489 /* EggCatchView.swift */,
 				C84985782C2A85EB0011B300 /* EggGachaView.swift */,
 				C813AD092C2ABBAB0096997D /* EggRevealView.swift */,
 				C84985772C2A85EB0011B300 /* BreakSessionView.swift */,
@@ -278,6 +284,7 @@
 				C849857D2C2A85EB0011B300 /* CustomButton.swift in Sources */,
 				5B3599EE2C27D0480026E929 /* TimeAssignmentViewModel.swift in Sources */,
 				C84985822C2A85EB0011B300 /* CongratulationsView.swift in Sources */,
+				C84AF7172C2B2F26004D8489 /* EggCatchView.swift in Sources */,
 				C84985832C2A85EB0011B300 /* ContentView.swift in Sources */,
 				C84985842C2A85EB0011B300 /* StudySessionTimerView.swift in Sources */,
 				C813AD062C2A8BA70096997D /* StudySessionPageView.swift in Sources */,
@@ -288,6 +295,7 @@
 				C84985862C2A85EB0011B300 /* BreakSessionView.swift in Sources */,
 				C813AD082C2AAAD70096997D /* EggGachaViewModel.swift in Sources */,
 				C88CA5902C2698B200815471 /* Extensions.swift in Sources */,
+				C84AF7192C2B3ABC004D8489 /* BasketDragViewModel.swift in Sources */,
 				C81B92012C24119C00282A88 /* Mini2App.swift in Sources */,
 				C8F19EE82C2980B300F80627 /* HapticsManager.swift in Sources */,
 				C813AD022C2A8ABA0096997D /* TimePickerComponent.swift in Sources */,

@@ -54,10 +54,11 @@ struct StudySessionTimerView: View {
                 
                 VStack {
                     TimerComponent(
-                        currDuration: timeAsignVM.getSessionDuration(),
+                        currDuration: timeAsignVM.sessionDuration,
                         signal: $studySignal
                     )
                     .onChange(of: studySignal) { oldValue, newValue in
+                        timeAsignVM.checkEndSession()
                         sessionState = .StudyActivity
                     }
                     

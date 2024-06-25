@@ -10,12 +10,14 @@ import SwiftUI
 struct DraggableView: View {
     @State private var isDragging:Bool = false
     @Binding var location: CGPoint
-        
+
     private let imageName:String
         
+    var basketVM = BasketDragViewModel.getInstance()
+    
     init(location: Binding<CGPoint>, imageName: String) {
-            self._location = location
-            self.imageName = imageName
+        self._location = location
+        self.imageName = imageName
     }
         
     var dragGesture: some Gesture{
@@ -31,8 +33,59 @@ struct DraggableView: View {
     }
         
     var body: some View{
-        Image(imageName)
-            .position(location)
-            .gesture(dragGesture)
+        ZStack {
+            Image(imageName)
+            
+            if basketVM.show[0] {
+                Image("telor")
+                    .resizable()
+                    .frame(width: 60, height: 100)
+                    .offset(x: -30, y: -50)
+                    .rotationEffect(.degrees(-10))
+            }
+            if basketVM.show[1] {
+                Image("telor")
+                    .resizable()
+                    .frame(width: 60, height: 100)
+                    .offset(x: 35, y: -50)
+                    .rotationEffect(.degrees(10))
+            }
+            if basketVM.show[2] {
+                Image("telor")
+                    .resizable()
+                    .frame(width: 60, height: 100)
+                    .offset(x: 00, y: -35)
+            }
+        }
+        .position(location)
+        .gesture(dragGesture)
     }
+}
+
+struct testBasket: View {
+    var body: some View {
+        ZStack {
+            Image("basket")
+            //            .position(location)
+            //            .gesture(dragGesture)
+            Image("telor")
+                .resizable()
+                .frame(width: 60, height: 100)
+                .offset(x: -30, y: -50)
+                .rotationEffect(.degrees(-10))
+            Image("telor")
+                .resizable()
+                .frame(width: 60, height: 100)
+                .offset(x: 35, y: -50)
+                .rotationEffect(.degrees(10))
+            Image("telor")
+                .resizable()
+                .frame(width: 60, height: 100)
+                .offset(x: 00, y: -35)
+        }
+    }
+}
+
+#Preview {
+    testBasket()
 }

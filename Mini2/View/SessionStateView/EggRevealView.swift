@@ -10,8 +10,9 @@ import SwiftUI
 struct EggRevealView: View {
     var gachaVM = EggGachaViewModel.getInstance()
     @State var chicken: Chicken?
-    
     @Binding var sessionState: SessionState
+    
+    var timeAssignVM = TimeAssignmentViewModel.getInstance()
     
     var body: some View {
         VStack {
@@ -32,11 +33,14 @@ struct EggRevealView: View {
             CustomButton(type: .Solid, text: "Use")
                 .onTapGesture {
                     gachaVM.updateChicken(chicken!)
+                    timeAssignVM.updateSession()
                     sessionState = .BreakSession
                 }
             
             CustomButton(type: .Outline, text: "Skip")
                 .onTapGesture {
+                    timeAssignVM.updateSession()
+                    print(timeAssignVM.sessionDuration)
                     sessionState = .BreakSession
                 }
             
