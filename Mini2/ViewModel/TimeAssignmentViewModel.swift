@@ -10,11 +10,11 @@ import SwiftData
 import SwiftUI
 
 class TimeAssignmentViewModel: ObservableObject {
-    @Published var studySessionTotal: Int = 0
-    @Published var breakSessionTotal: Int = 0
-    @Published var studyTimeinMinutes = 0
+    @Published var studySessionTotal: Int = 2
+    @Published var breakSessionTotal: Int = 1
+    @Published var studyTimeinMinutes = 60
     @Published var currentSession = 1
-    @Published var totalSession = 0
+    @Published var totalSession = 3
 //    @Published var studySessionTime:[Int] = []
 //    @Published var breakSessionTime:[Int] = []
     
@@ -93,23 +93,22 @@ class TimeAssignmentViewModel: ObservableObject {
     func getSessionDuration() -> Int {
         if currentSession%2 == 1 {
             //Return Study Session
-            let currLearn = getStudySession()
             if studyTimeinMinutes > 30 {
                 self.studyTimeinMinutes -= 25
-                return 25
+                return 25*60
             } else {
                 self.studyTimeinMinutes = 0
-                return self.studyTimeinMinutes
+                return self.studyTimeinMinutes*60
             }
         } else {
             //Return Break Session
             let currBreak = getBreakSession()
             if currBreak%4 == 0 {
                 self.studySessionTotal -= 15
-                return 15
+                return 15*60
             } else {
                 self.studyTimeinMinutes -= 5
-                return 5
+                return 5*60
             }
         }
     }

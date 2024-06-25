@@ -14,7 +14,6 @@
 		C81B92012C24119C00282A88 /* Mini2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81B92002C24119C00282A88 /* Mini2App.swift */; };
 		C81B92052C24119D00282A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81B92042C24119D00282A88 /* Assets.xcassets */; };
 		C81B92082C24119D00282A88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C81B92072C24119D00282A88 /* Preview Assets.xcassets */; };
-		C81E9BB52C2597C6008F45C4 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81E9BB42C2597C6008F45C4 /* UserDataModel.swift */; };
 		C849857D2C2A85EB0011B300 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849856B2C2A85EB0011B300 /* CustomButton.swift */; };
 		C849857E2C2A85EB0011B300 /* TimerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849856C2C2A85EB0011B300 /* TimerComponent.swift */; };
 		C849857F2C2A85EB0011B300 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849856E2C2A85EB0011B300 /* DraggableView.swift */; };
@@ -163,8 +162,8 @@
 			children = (
 				C84985742C2A85EB0011B300 /* StudySessionTimerView.swift */,
 				C84985702C2A85EB0011B300 /* BeforeBreakView.swift */,
-				C84985762C2A85EB0011B300 /* BreakEndActionView.swift */,
 				C84985772C2A85EB0011B300 /* BreakSessionView.swift */,
+				C84985762C2A85EB0011B300 /* BreakEndActionView.swift */,
 				C84985782C2A85EB0011B300 /* EggGachaView.swift */,
 			);
 			path = SessionStateView;
@@ -268,12 +267,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C81E9BB52C2597C6008F45C4 /* UserDataModel.swift in Sources */,
 				C84985802C2A85EB0011B300 /* BeforeBreakView.swift in Sources */,
 				C84985812C2A85EB0011B300 /* CollectableItem.swift in Sources */,
 				C849857D2C2A85EB0011B300 /* CustomButton.swift in Sources */,
 				5B3599EE2C27D0480026E929 /* TimeAssignmentViewModel.swift in Sources */,
-				C81E9BB52C2597C6008F45C4 /* UserDataModel.swift in Sources */,
 				C84985822C2A85EB0011B300 /* CongratulationsView.swift in Sources */,
 				C84985832C2A85EB0011B300 /* ContentView.swift in Sources */,
 				C84985842C2A85EB0011B300 /* StudySessionTimerView.swift in Sources */,

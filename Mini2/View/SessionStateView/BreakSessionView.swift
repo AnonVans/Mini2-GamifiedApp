@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct BreakSessionView: View {
-    @State var timerSignal = false
+    @State var breakSignal = false
     
     var body: some View {
         NavigationStack {
             ZStack {
+                //Background
                 Color.primaryBG
                     .ignoresSafeArea()
                 
@@ -24,9 +25,9 @@ struct BreakSessionView: View {
                 LinearGradient(
                     colors: [.clear, .primaryBG],
                     startPoint: UnitPoint(x: 0.48, y: 0),
-                    endPoint: UnitPoint(x: 0.48, y: 0.5)
+                    endPoint: UnitPoint(x: 0.48, y: 0.25)
                 )
-                    .frame(height: 200)
+                .frame(height: 200)
                 
                 VStack {
                     Text("Break Time!")
@@ -38,8 +39,8 @@ struct BreakSessionView: View {
                     Spacer()
                     
                     VStack {
-                        TimerComponent(currDuration: 5, signal: $timerSignal)
-                            .padding(2)
+                        TimerComponent(currDuration: 5, signal: $breakSignal)
+
                         
                         Text("You know what?\nChickens have good time management, we will rest strict to schedule")
                             .font(Font.custom("SF Pro Rounded", size: 19))
@@ -48,6 +49,7 @@ struct BreakSessionView: View {
                             .frame(width: 230, alignment: .top)
                     }
                     .offset(y: 60)
+                    
                     Spacer()
                 }
             }
