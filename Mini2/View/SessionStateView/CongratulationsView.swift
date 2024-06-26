@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CongratulationsView: View {
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         ZStack {
             VStack {
@@ -40,7 +42,7 @@ struct CongratulationsView: View {
                 Spacer()
                 
                 Button(action: {
-                    
+                    dismiss()
                 }) {
                     Text("Back to Timer")
                         .fontWeight(.semibold)

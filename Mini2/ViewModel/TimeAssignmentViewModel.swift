@@ -12,8 +12,8 @@ import SwiftUI
 class TimeAssignmentViewModel: ObservableObject {
     @Published var studySessionTotal: Int = 2
     @Published var breakSessionTotal: Int = 1
-    @Published var studyTimeinMinutes = 35
-    @Published var currentSession = 1
+    @Published var studyTimeinMinutes = 60
+    @Published var currentSession = 0
     @Published var totalSession = 3
     
     @Published var sessionOver = false
@@ -31,15 +31,14 @@ class TimeAssignmentViewModel: ObservableObject {
     }
     
     func timeAssignment(_ studyTime:Int){
-        studyTimeinMinutes = studyTime * 60
-        print(studyTimeinMinutes)
-        
+        self.studyTimeinMinutes = studyTime * 60
         self.studySessionTotal = studyTimeinMinutes/30
         self.breakSessionTotal = studySessionTotal - 1
         self.totalSession = self.studySessionTotal + self.breakSessionTotal
         
-        print(studySessionTotal)
-        print(breakSessionTotal)
+        print("Study time: \(studyTimeinMinutes)")
+        print("Study session: \(studySessionTotal)")
+        print("Break session: \(breakSessionTotal)")
         
 //        studySessionTime = [25]
 //        studyTimeinMinutes -= 25
@@ -133,6 +132,6 @@ class TimeAssignmentViewModel: ObservableObject {
     }
     
     func resetCurrentSession() {
-        self.currentSession = 1
+        self.currentSession = 0
     }
 }

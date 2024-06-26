@@ -8,23 +8,22 @@
 import SwiftUI
 
 struct TimePickerComponent: View {
-    private let hours = Array(1..<7)
-    var timeAssignVM = TimeAssignmentViewModel.getInstance()
-
     @State private var selectedHour = 1
     @State private var totalSession = 3
     
+    private let hours = Array(1..<7)
+    var timeAssignVM = TimeAssignmentViewModel.getInstance()
+    
     // Function to calculate learning and break cycles
-    func calculateCycles(for hours: Int) -> Int  {
-        
-        let totalMinutes = hours * 60
-        let cycleMinutes = 25 + 5
-        let numberOfCycles = totalMinutes / cycleMinutes
-        return numberOfCycles
-    }
+//    func calculateCycles(for hours: Int) -> Int  {
+//        
+//        let totalMinutes = hours * 60
+//        let cycleMinutes = 25 + 5
+//        let numberOfCycles = totalMinutes / cycleMinutes
+//        return numberOfCycles
+//    }
     
     var body: some View {
-        
         ZStack {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color.black, lineWidth: 4)

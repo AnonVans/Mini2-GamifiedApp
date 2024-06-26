@@ -8,31 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    var hapticManager = HapticsManager()
-    @State var signal = false
+    @State var itemSignal = false
+    @State var startSignal = false
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            
-//            TimerComponent(signal: $signal)
-//            
-//            Button("Test Haptic") {
-//                hapticManager.playStudyHaptics()
-//            }
-//            .buttonStyle(BorderedProminentButtonStyle())
-//            
-//            Button("Stop Haptic") {
-//                hapticManager.stopStudyHaptics()
-//            }
-//            .buttonStyle(BorderedProminentButtonStyle())
+        NavigationStack {
+            SetTimerView(itemSignal: $itemSignal, startSignal: $startSignal)
+                .navigationDestination(isPresented: $itemSignal) {
+                    CollectableItemsView()
+                }
+                .navigationDestination(isPresented: $startSignal) {
+                    StudySessionPageView()
+                }
         }
-//        .padding()
-//        .onChange(of: signal) { oldValue, newValue in
-//            hapticManager.playStudyHaptics()
-//        }
     }
+}
+
+#Preview {
+    ContentView()
 }

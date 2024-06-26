@@ -20,7 +20,6 @@
 		C849857E2C2A85EB0011B300 /* TimerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849856C2C2A85EB0011B300 /* TimerComponent.swift */; };
 		C849857F2C2A85EB0011B300 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C849856E2C2A85EB0011B300 /* DraggableView.swift */; };
 		C84985802C2A85EB0011B300 /* BeforeBreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985702C2A85EB0011B300 /* BeforeBreakView.swift */; };
-		C84985812C2A85EB0011B300 /* CollectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985712C2A85EB0011B300 /* CollectableItem.swift */; };
 		C84985822C2A85EB0011B300 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985722C2A85EB0011B300 /* CongratulationsView.swift */; };
 		C84985832C2A85EB0011B300 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985732C2A85EB0011B300 /* ContentView.swift */; };
 		C84985842C2A85EB0011B300 /* StudySessionTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985742C2A85EB0011B300 /* StudySessionTimerView.swift */; };
@@ -29,6 +28,7 @@
 		C84985872C2A85EB0011B300 /* EggGachaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84985782C2A85EB0011B300 /* EggGachaView.swift */; };
 		C84AF7172C2B2F26004D8489 /* EggCatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7162C2B2F26004D8489 /* EggCatchView.swift */; };
 		C84AF7192C2B3ABC004D8489 /* BasketDragViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7182C2B3ABC004D8489 /* BasketDragViewModel.swift */; };
+		C84AF71B2C2BEF6C004D8489 /* CollectableItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF71A2C2BEF6C004D8489 /* CollectableItemsView.swift */; };
 		C88CA5902C2698B200815471 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58F2C2698B200815471 /* Extensions.swift */; };
 		C8F19EE42C29508C00F80627 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE32C29508C00F80627 /* Config.swift */; };
 		C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE52C2976A500F80627 /* ObjectModel.swift */; };
@@ -51,7 +51,6 @@
 		C849856C2C2A85EB0011B300 /* TimerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerComponent.swift; sourceTree = "<group>"; };
 		C849856E2C2A85EB0011B300 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		C84985702C2A85EB0011B300 /* BeforeBreakView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeBreakView.swift; sourceTree = "<group>"; };
-		C84985712C2A85EB0011B300 /* CollectableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectableItem.swift; sourceTree = "<group>"; };
 		C84985722C2A85EB0011B300 /* CongratulationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
 		C84985732C2A85EB0011B300 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C84985742C2A85EB0011B300 /* StudySessionTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudySessionTimerView.swift; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		C84985782C2A85EB0011B300 /* EggGachaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EggGachaView.swift; sourceTree = "<group>"; };
 		C84AF7162C2B2F26004D8489 /* EggCatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCatchView.swift; sourceTree = "<group>"; };
 		C84AF7182C2B3ABC004D8489 /* BasketDragViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDragViewModel.swift; sourceTree = "<group>"; };
+		C84AF71A2C2BEF6C004D8489 /* CollectableItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableItemsView.swift; sourceTree = "<group>"; };
 		C88CA58F2C2698B200815471 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C8F19EE32C29508C00F80627 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C8F19EE52C2976A500F80627 /* ObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModel.swift; sourceTree = "<group>"; };
@@ -159,10 +159,9 @@
 		C84985752C2A85EB0011B300 /* ScreenView */ = {
 			isa = PBXGroup;
 			children = (
-				C84985712C2A85EB0011B300 /* CollectableItem.swift */,
 				C813AD032C2A8B910096997D /* SetTimerView.swift */,
 				C813AD052C2A8BA70096997D /* StudySessionPageView.swift */,
-				C84985722C2A85EB0011B300 /* CongratulationsView.swift */,
+				C84AF71A2C2BEF6C004D8489 /* CollectableItemsView.swift */,
 			);
 			path = ScreenView;
 			sourceTree = "<group>";
@@ -177,6 +176,7 @@
 				C813AD092C2ABBAB0096997D /* EggRevealView.swift */,
 				C84985772C2A85EB0011B300 /* BreakSessionView.swift */,
 				C84985762C2A85EB0011B300 /* BreakEndActionView.swift */,
+				C84985722C2A85EB0011B300 /* CongratulationsView.swift */,
 			);
 			path = SessionStateView;
 			sourceTree = "<group>";
@@ -280,11 +280,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84985802C2A85EB0011B300 /* BeforeBreakView.swift in Sources */,
-				C84985812C2A85EB0011B300 /* CollectableItem.swift in Sources */,
 				C849857D2C2A85EB0011B300 /* CustomButton.swift in Sources */,
 				5B3599EE2C27D0480026E929 /* TimeAssignmentViewModel.swift in Sources */,
 				C84985822C2A85EB0011B300 /* CongratulationsView.swift in Sources */,
 				C84AF7172C2B2F26004D8489 /* EggCatchView.swift in Sources */,
+				C84AF71B2C2BEF6C004D8489 /* CollectableItemsView.swift in Sources */,
 				C84985832C2A85EB0011B300 /* ContentView.swift in Sources */,
 				C84985842C2A85EB0011B300 /* StudySessionTimerView.swift in Sources */,
 				C813AD062C2A8BA70096997D /* StudySessionPageView.swift in Sources */,

@@ -55,6 +55,7 @@ struct StudySessionPageView: View {
                 CongratulationsView()
             }
         }
+        .navigationBarBackButtonHidden()
     }
 }
 
