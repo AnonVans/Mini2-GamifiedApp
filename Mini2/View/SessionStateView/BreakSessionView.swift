@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct BreakSessionView: View {
-    @State private var chickenXPosition = 200.0
-    @State private var chickenLeft = true
-    @State private var chickenDirection = "Ayam"
     @State private var breakSignal = false
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     @Binding var sessionState: SessionState
+    @State var chicken: Chicken = Chicken()
     
     var body: some View {
         ZStack {
@@ -24,21 +22,7 @@ struct BreakSessionView: View {
                 .ignoresSafeArea()
             
             //Chicken Image
-            Image(chickenDirection)
-                .position(CGPoint(x: chickenXPosition, y: 200.0))
-                .padding(.top, 100)
-                .onReceive(timer) { input in
-                    if(chickenXPosition > 10 && chickenLeft){
-                        chickenXPosition -= 25
-                    } else if(chickenXPosition == 400) {
-                        chickenLeft = true
-                        chickenDirection = "Ayam"
-                    } else {
-                        chickenLeft = false
-                        chickenDirection = "ayamKanan"
-                        chickenXPosition += 25
-                    }
-                }
+            WalkingChicken(chicken: chicken)
             
             LinearGradient(
                 colors: [.clear, .primaryBG],
@@ -51,25 +35,39 @@ struct BreakSessionView: View {
                 Text("Break Time!")
                     .font(.system(size: 27))
                     .fontWeight(.semibold)
-                    .foregroundStyle(.primary6)
+                    .foregroundStyle(.yellow7)
                     .offset(y: 60)
                 
                 Spacer()
                 
                 VStack {
-                    TimerComponent(
-                        currDuration: timeAssignVM.sessionDuration,
-                        signal: $breakSignal
-                    )
-                    .onChange(of: breakSignal) { oldValue, newValue in
-                        sessionState = .BreakActivity
+                    Spacer()
+                    
+                    VStack {
+                        TimerComponent(
+                            currDuration: timeAssignVM.sessionDuration,
+                            signal: $breakSignal,
+                            type: .Break
+                        )
+                        .onChange(of: breakSignal) { oldValue, newValue in
+                            sessionState = .BreakActivity
+                        }
+                        
+                        Text("Break \(timeAssignVM.getBreakSession()) of \(timeAssignVM.breakSessionTotal)")
+                            .font(.system(size: 27))
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.yellow6)
                     }
-
+                    .offset(y: 25)
+                    
+                    Spacer()
+                    
                     Text("You know what?\nChickens have good time management, we will rest strict to schedule")
-                        .font(Font.custom("SF Pro Rounded", size: 19))
+                        .font(.system(size: 19))
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.primary5)
+                        .foregroundColor(.yellow6)
                         .frame(width: 230, alignment: .top)
+                        .offset(y: -100)
                 }
                 
                 Spacer()

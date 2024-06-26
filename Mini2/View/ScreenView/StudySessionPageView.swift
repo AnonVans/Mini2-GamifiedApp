@@ -22,13 +22,19 @@ struct StudySessionPageView: View {
                 switch sessionState {
                 case .StudySession:
                     StudySessionTimerView(sessionState: $sessionState)
+//                    EmptyView()
                 case .StudyActivity:
                     BeforeBreakView(sessionState: $sessionState)
                         .onAppear {
                             hapticsManager.playStudyHaptics()
                         }
+                        .onDisappear {
+                            hapticsManager.stopStudyHaptics()
+                        }
+//                    EmptyView()
                 case .EggCatch:
                     EggCatchView(sessionState: $sessionState)
+//                    EmptyView()
                 case .LateToBreak:
                     //Negative case
                     Text("Something")
@@ -37,19 +43,31 @@ struct StudySessionPageView: View {
                     Text("Something")
                 case .ChooseEggs:
                     EggGachaView(sessionState: $sessionState)
+//                    EmptyView()
                 case .OpenEggs:
                     EggRevealView(sessionState: $sessionState)
+//                    EmptyView()
+                case .StartBreak:
+                    StartBreakView(sessionState: $sessionState)
+//                    EmptyView()
                 case .BreakSession:
                     BreakSessionView(sessionState: $sessionState)
+//                    EmptyView()
                 case .BreakActivity:
                     BreakEndActionView(sessionState: $sessionState)
                         .onAppear {
                             hapticsManager.playBreakHaptics()
                         }
+                        .onDisappear {
+                            hapticsManager.stopBreakHaptics()
+                        }
+//                    EmptyView()
                 case .BreakActivityFailed:
                     BreakEndFailedView(sessionState: $sessionState)
+//                    EmptyView()
                 case .BreakActivitySuccess:
                     BreakEndSuccessView(sessionState: $sessionState)
+//                    EmptyView()
                 }
             } else {
                 CongratulationsView()
@@ -59,6 +77,6 @@ struct StudySessionPageView: View {
     }
 }
 
-#Preview {
-    StudySessionPageView()
-}
+//#Preview {
+//    StudySessionPageView()
+//}

@@ -32,3 +32,8 @@ extension ButtonSize {
     }
 }
 
+extension Image {
+    var EggCatchChickIMG: some View {
+        return self.resizable().scaledToFit().frame(width: 170)
+    }
+}

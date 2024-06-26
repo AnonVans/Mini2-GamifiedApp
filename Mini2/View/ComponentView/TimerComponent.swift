@@ -10,6 +10,7 @@ import SwiftUI
 enum TimerType: String {
     case Swiper = "Swipe"
     case Regular = "Reg"
+    case Break = "Break"
 }
 
 struct TimerComponent: View {
@@ -25,7 +26,7 @@ struct TimerComponent: View {
 //                .font(Font.custom("SF Pro Rounded", size: 128))
                 .font(.system(size: type.rawValue == "Swipe" ? 33 : 48))
                 .bold()
-                .foregroundStyle(type.rawValue == "Swipe" ? .primary5 : .primary6)
+                .foregroundStyle(type.rawValue == "Swipe" ? .primary5 : (type.rawValue == "Break" ? .yellow7 : .primary6))
                 .onAppear {
                     timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
                         if currDuration > 0 {

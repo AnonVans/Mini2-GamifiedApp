@@ -25,31 +25,46 @@ struct TimePickerComponent: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.black, lineWidth: 4)
-                .background(RoundedRectangle(cornerRadius: 12)
-                .fill(Color.primary1))
-                .frame(width: 200, height: 120)
-                .cornerRadius(12)
-                .shadow(color: Color.black.opacity(0.3), radius: 2, x: 3, y: 4)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 12)
-                        .inset(by: -0.5)
-                        .stroke(.white, lineWidth: 4)
-                )
-               
+            Rectangle()
+              .foregroundColor(.clear)
+              .frame(width: 215, height: 47)
+              .background(.white)
+              .cornerRadius(12)
+              .shadow(color: Color.black.opacity(0.3), radius: 2, x: 3, y: 4)
             
+            Rectangle()
+              .foregroundColor(.clear)
+              .frame(width: 200, height: 32)
+              .background(.white)
+              .cornerRadius(5)
+              .overlay(
+                RoundedRectangle(cornerRadius: 5)
+                  .inset(by: -1.25)
+                  .stroke(.black, lineWidth: 2.5)
+              )
             
-            Picker("Select Hour", selection: $selectedHour) {
-                ForEach(hours, id: \.self) { hour in
-                    Text("\(hour)     Hours")
+            ZStack {
+                Picker("Select Hour", selection: $selectedHour) {
+                    ForEach(hours, id: \.self) { hour in
+                        VStack {
+                            Text("\(hour)")
+                                .foregroundStyle(.primary6)
+                                .offset(x: -40)
+                        }
+                    }
                 }
-            }
-            .pickerStyle(WheelPickerStyle())
-            .frame(width: 200, height: 120)
-            .onChange(of: selectedHour) { oldValue, newValue in
-                timeAssignVM.timeAssignment(selectedHour)
-                totalSession = timeAssignVM.totalSession
+                .pickerStyle(WheelPickerStyle())
+                .frame(width: 220, height: 150)
+                .onChange(of: selectedHour) { oldValue, newValue in
+                    timeAssignVM.timeAssignment(selectedHour)
+                    totalSession = timeAssignVM.totalSession
+                }
+                
+                Text("Hours")
+                    .font(.system(size: 20))
+                    .padding(.horizontal, 10)
+                    .foregroundStyle(.primary6)
+                    .offset(x: 25)
             }
             
         }
@@ -57,64 +72,73 @@ struct TimePickerComponent: View {
 
         
         ZStack {
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.black, lineWidth: 3)
-                .background(RoundedRectangle(cornerRadius: 12)
-                    .fill(Color.white))
-                .frame(width: 319, height: 112)
-                .cornerRadius(12)
-                .shadow(color: Color.black.opacity(0.3), radius: 2, x: 3, y: 4)
-                .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                .inset(by: -0.5)
-                .stroke(.white, lineWidth: 3)
-
-                )
-
-            
             HStack {
-                VStack (alignment: .leading, spacing: 10) {
-                    HStack {
-                        Image(systemName: "text.book.closed.fill")
-                            .resizable()
-                            .foregroundColor(.blue)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 14, height: 14)
-                        
+                ZStack {
+                    Rectangle()
+                      .foregroundColor(.clear)
+                      .frame(width: 138, height: 130)
+                      .background(.white)
+                      .cornerRadius(12)
+                      .shadow(color: Color.black.opacity(0.3), radius: 2, x: 3, y: 4)
+                    
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("\(timeAssignVM.studySessionTotal)x")
+                            .font(.system(size: 19))
+                            .fontWeight(.bold)
+                            .foregroundStyle(.primary5)
+                        Text("25 m")
+                            .font(.system(size: 33))
+                            .fontWeight(.bold)
+                            .foregroundStyle(.primary5)
                         Text("Learning")
+                            .font(.system(size: 19))
+                            .foregroundStyle(.primary5)
                     }
-                    
-                    HStack {
-                        Image(systemName: "figure")
-                            .resizable()
-                            .foregroundColor(.blue)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 14, height: 14)
-                        
-                        Text("Break")
-                    }
-                    
-                    HStack {
-                        Image(systemName: "repeat")
-                            .resizable()
-                            .foregroundColor(.blue)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 14, height: 14)
-                        
-                        Text("Cycle")
-                    }
+                    .padding(10)
+                    .frame(width: 128, alignment: .leading)
+                    .background(.primary1)
+                    .cornerRadius(6)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 6)
+                            .inset(by: 1.25)
+                            .stroke(.black, lineWidth: 2.5)
+                    )
                 }
                 
-                Spacer()
-                VStack (alignment: .trailing, spacing: 10) {
-                    Text("25 min")
-                    Text("5 min")
-                    Text(String(totalSession))
+                ZStack {
+                    Rectangle()
+                      .foregroundColor(.clear)
+                      .frame(width: 138, height: 130)
+                      .background(.white)
+                      .cornerRadius(12)
+                      .shadow(color: Color.black.opacity(0.3), radius: 2, x: 3, y: 4)
+                    
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("\(timeAssignVM.breakSessionTotal)x")
+                            .font(.system(size: 19))
+                            .fontWeight(.bold)
+                            .foregroundStyle(.yellow5)
+                        Text("5 m")
+                            .font(.system(size: 33))
+                            .fontWeight(.bold)
+                            .foregroundStyle(.yellow5)
+                        Text("Resting")
+                            .font(.system(size: 19))
+                            .foregroundStyle(.yellow5)
+                    }
+                    .padding(10)
+                    .frame(width: 128, alignment: .leading)
+                    .background(.yellow1)
+                    .cornerRadius(6)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 6)
+                            .inset(by: 1.25)
+                            .stroke(.black, lineWidth: 2.5)
+                    )
                 }
-
             }
-            .padding(.horizontal, 70)
-        }//Zstackbreakdown
+            
+        }
 
     }
 }

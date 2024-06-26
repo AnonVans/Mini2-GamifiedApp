@@ -18,8 +18,8 @@ class HapticsManager {
     init(engineRestart: Bool = false, engine: CHHapticEngine? = nil) {
         self.engineRestart = engineRestart
         self.engine = engine
-        self.studyPlayer = prepareHaptics("CallOfGacha")
-        self.breakPlayer = prepareHaptics("CallOfDanger")
+//        self.studyPlayer = prepareHapticsPattern("CallOfDanger")
+//        self.breakPlayer = prepareHapticsPattern("CallOfGacha")
         
         prepareHaptics()
     }
@@ -76,14 +76,14 @@ class HapticsManager {
     }
     
     func prepareAudio(_ audio: String) -> CHHapticAudioResourceID {
-        let hapticSoundURL = Bundle.main.url(forResource: "audio", withExtension: "wav")!
+        let hapticSoundURL = Bundle.main.url(forResource: audio, withExtension: "wav")
         
-        let hapticAudio = (try! engine?.registerAudioResource(hapticSoundURL, options: [:]))!
+        let hapticAudio = (try! engine?.registerAudioResource(hapticSoundURL!, options: [:]))!
         
         return hapticAudio
     }
     
-    func prepareHaptics(_ audioName: String) -> CHHapticAdvancedPatternPlayer? {
+    func prepareHapticsPattern(_ audioName: String) -> CHHapticAdvancedPatternPlayer? {
         prepareHaptics()
         restartEngineIfNeeded()
         
@@ -95,8 +95,8 @@ class HapticsManager {
         let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [intensity,sharpness], relativeTime: 0, duration: 5)
         hapticsEvents.append(event)
         
-//        let audioEvent = CHHapticEvent(audioResourceID: prepareAudio(audioName), parameters: [CHHapticEventParameter(parameterID: .audioVolume, value: 1.0)], relativeTime: 0)
-//        hapticsEvents.append(audioEvent)
+        let audioEvent = CHHapticEvent(audioResourceID: prepareAudio(audioName), parameters: [CHHapticEventParameter(parameterID: .audioVolume, value: 1.0)], relativeTime: 0)
+        hapticsEvents.append(audioEvent)
         
         do {
             let pattern = try CHHapticPattern(events: hapticsEvents, parameters: [])
@@ -111,6 +111,8 @@ class HapticsManager {
     func playStudyHaptics() {
         restartEngineIfNeeded()
         
+        self.studyPlayer = prepareHapticsPattern("CallOfDanger")
+        
         do {
             try self.studyPlayer?.start(atTime: 0)
             self.studyPlayer?.loopEnabled = true
@@ -121,6 +123,8 @@ class HapticsManager {
     
     func playBreakHaptics() {
         restartEngineIfNeeded()
+        
+        self.breakPlayer = prepareHapticsPattern("CallOfGacha")
         
         do {
             try self.breakPlayer?.start(atTime: 0)

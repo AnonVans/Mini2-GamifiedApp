@@ -30,12 +30,10 @@ struct EggCatchView: View {
     var body: some View {
         ZStack {
             if(basketTapped == false){
-                Image("Ayam")
+                Image("DefaultNormalLookLeft")
+                    .EggCatchChickIMG
                     .padding(.top, 50)
                     .position(CGPoint(x: 200.0, y: 100.0))
-//                Image("telorpecah")
-//                    .resizable()
-//                    .frame(width: 190, height: 90)
                 
                 HStack{
                     Image("leftarrow")
@@ -43,7 +41,10 @@ struct EggCatchView: View {
                         .animation(.easeInOut(duration: 1), value: leftArrowXAmount)
                     
                     
-                    Image("basket")
+                    Image("Nest")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 185)
                         .position(CGPoint(x: 65.0, y: 650.0))
                         .onTapGesture {
                             basketTapped = true
@@ -67,7 +68,7 @@ struct EggCatchView: View {
                 }
             } else {
                 ZStack{
-                    DraggableView(location: $basketPosition, imageName: "basket")
+                    DraggableView(location: $basketPosition, imageName: "Nest")
                         .onChange(of: basketPosition){ oldValue, newValue in
                             self.basketPosition.x = newValue.x
                                 //                            print("Basket position updated: \(newValue)")
@@ -77,20 +78,22 @@ struct EggCatchView: View {
                         ZStack {
                             ForEach(0..<eggPositions.count, id: \.self) { index in
                                 
-                                Image("telor")
+                                Image("Egg")
                                     .resizable()
                                     .frame(width: 60, height: 100)
                                     .position(eggPositions[index])
                                     .opacity(index <= currentEggIndex && !eggDisappear[index] ? 1 : 0)
                                     .animation(.default, value: currentEggIndex)
                                 
-                                Image("Ayam")
+                                Image("DefaultNormalLookLeft")
+                                    .EggCatchChickIMG
                                     .padding(.top, 50)
                                     .position(chickenPositions[index])
                                     .opacity(index <= currentEggIndex && !eggDisappear[index] ? 1 : 0)
                                 
-                                Image("telorpecah")
+                                Image("TelorPecah")
                                     .resizable()
+                                    .scaledToFit()
                                     .frame(width: 190, height: 90)
                                     .position(brokenEggPositions[index])
                                     .opacity(eggBroken[index] ? 1 : 0)
@@ -156,5 +159,5 @@ struct EggCatchView: View {
 }
 
 //#Preview {
-//    EggCatchingView()
+//    EggCatchView()
 //}

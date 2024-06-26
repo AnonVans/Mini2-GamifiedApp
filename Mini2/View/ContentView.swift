@@ -10,16 +10,16 @@ import SwiftUI
 struct ContentView: View {
     @State var itemSignal = false
     @State var startSignal = false
-    
+        
     var body: some View {
         NavigationStack {
-            SetTimerView(itemSignal: $itemSignal, startSignal: $startSignal)
-                .navigationDestination(isPresented: $itemSignal) {
-                    CollectableItemsView()
-                }
-                .navigationDestination(isPresented: $startSignal) {
-                    StudySessionPageView()
-                }
+//            SetTimerView(itemSignal: $itemSignal, startSignal: $startSignal)
+//                .navigationDestination(isPresented: $itemSignal) {
+//                    CollectableItemsView()
+//                }
+//                .navigationDestination(isPresented: $startSignal) {
+//                    StudySessionPageView()
+//                }
         }
     }
 }

@@ -28,20 +28,29 @@ enum GachaState {
     case OpenEggs
 }
 
-enum ChickenSkin: String {
+enum ChickenSkin: String, Codable {
     case Default = "Default"
+    case Detective = "Detective"
+    case Business = "Business"
+    case Egg = "Egg"
+    case Farmer = "Farmer"
+    case Ironman = "Ironman"
+    case Luffy = "Luffy"
+    case Nurse = "Nurse"
+    case Romairama = "Romairama"
+    case Mermaid = "Mermaid"
 }
 
-enum ChickentState: String {
+enum ChickentState: String, Codable {
     case Normal = "Normal"
     case Happy = "Happy"
     case Scared = "Scared"
 }
 
-enum ChickenPose: String {
-    case Regular = "LookLeft"
-    case Reverse = "LookRight"
-    case Celebrate = "HandsUp"
+enum ChickenPose: String, Codable {
+    case LookLeft = "LookLeft"
+    case LookRight = "LookRight"
+    case HandsUp = "HandsUp"
 }
 
 enum SessionState {
@@ -52,6 +61,7 @@ enum SessionState {
     case FailedToCatch
     case ChooseEggs
     case OpenEggs
+    case StartBreak
     case BreakSession
     case BreakActivity
     case BreakActivityFailed

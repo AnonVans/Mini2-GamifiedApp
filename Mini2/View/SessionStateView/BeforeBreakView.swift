@@ -9,35 +9,18 @@ import SwiftUI
 
 struct BeforeBreakView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    let eggTimer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
-    @State private var timeRemaining = 10.0
+    @State private var timeRemaining = 30.0
     @State private var yAmount = 575.0
     @State private var swipedUp = false
     
-    @State private var chickenXPosition = 200.0
-    @State private var chickenLeft = true
-    @State private var chickenDirection = "Ayam"
     @State private var studySignal = false
+    @State var chicken: Chicken = Chicken()
     
     @Binding var sessionState: SessionState
     
     var body: some View {
         ZStack {
-            Image(chickenDirection)
-                .position(CGPoint(x: chickenXPosition, y: 200.0))
-                .padding(.top, 100)
-                .onReceive(timer) { input in
-                    if(chickenXPosition > 10 && chickenLeft){
-                        chickenXPosition -= 25
-                    } else if(chickenXPosition == 400) {
-                        chickenLeft = true
-                        chickenDirection = "Ayam"
-                    } else {
-                        chickenLeft = false
-                        chickenDirection = "ayamKanan"
-                        chickenXPosition += 25
-                    }
-                }
+            WalkingChicken(chicken: chicken)
             
             LinearGradient(
                 colors: [.clear, .primaryBG],
@@ -55,10 +38,6 @@ struct BeforeBreakView: View {
                         .offset(y: -25)
                     
                     VStack {
-                        Text("Session")
-                        
-                        Spacer()
-                        
                         Image("arrowupnew")
                             .position(CGPoint(x: 200.0, y: yAmount))
                             .animation(.easeInOut(duration: 1), value: yAmount)

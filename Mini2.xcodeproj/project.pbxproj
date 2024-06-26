@@ -29,6 +29,11 @@
 		C84AF7172C2B2F26004D8489 /* EggCatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7162C2B2F26004D8489 /* EggCatchView.swift */; };
 		C84AF7192C2B3ABC004D8489 /* BasketDragViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7182C2B3ABC004D8489 /* BasketDragViewModel.swift */; };
 		C84AF71B2C2BEF6C004D8489 /* CollectableItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF71A2C2BEF6C004D8489 /* CollectableItemsView.swift */; };
+		C84AF71D2C2BF570004D8489 /* ChickenSkins.json in Resources */ = {isa = PBXBuildFile; fileRef = C84AF71C2C2BF570004D8489 /* ChickenSkins.json */; };
+		C84AF71F2C2BFA30004D8489 /* StartBreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF71E2C2BFA30004D8489 /* StartBreakView.swift */; };
+		C84AF72D2C2C1F97004D8489 /* CallOfDanger.wav in Resources */ = {isa = PBXBuildFile; fileRef = C84AF72B2C2C1F97004D8489 /* CallOfDanger.wav */; };
+		C84AF72E2C2C1F97004D8489 /* CallOfGacha.wav in Resources */ = {isa = PBXBuildFile; fileRef = C84AF72C2C2C1F97004D8489 /* CallOfGacha.wav */; };
+		C84AF7342C2C26F2004D8489 /* WalkingChicken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7332C2C26F2004D8489 /* WalkingChicken.swift */; };
 		C88CA5902C2698B200815471 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58F2C2698B200815471 /* Extensions.swift */; };
 		C8F19EE42C29508C00F80627 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE32C29508C00F80627 /* Config.swift */; };
 		C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE52C2976A500F80627 /* ObjectModel.swift */; };
@@ -60,6 +65,11 @@
 		C84AF7162C2B2F26004D8489 /* EggCatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCatchView.swift; sourceTree = "<group>"; };
 		C84AF7182C2B3ABC004D8489 /* BasketDragViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketDragViewModel.swift; sourceTree = "<group>"; };
 		C84AF71A2C2BEF6C004D8489 /* CollectableItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableItemsView.swift; sourceTree = "<group>"; };
+		C84AF71C2C2BF570004D8489 /* ChickenSkins.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChickenSkins.json; sourceTree = "<group>"; };
+		C84AF71E2C2BFA30004D8489 /* StartBreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartBreakView.swift; sourceTree = "<group>"; };
+		C84AF72B2C2C1F97004D8489 /* CallOfDanger.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CallOfDanger.wav; sourceTree = "<group>"; };
+		C84AF72C2C2C1F97004D8489 /* CallOfGacha.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CallOfGacha.wav; sourceTree = "<group>"; };
+		C84AF7332C2C26F2004D8489 /* WalkingChicken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingChicken.swift; sourceTree = "<group>"; };
 		C88CA58F2C2698B200815471 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C8F19EE32C29508C00F80627 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C8F19EE52C2976A500F80627 /* ObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModel.swift; sourceTree = "<group>"; };
@@ -152,6 +162,7 @@
 				C849856C2C2A85EB0011B300 /* TimerComponent.swift */,
 				C813ACFF2C2A8ABA0096997D /* TimePickerComponent.swift */,
 				C849856E2C2A85EB0011B300 /* DraggableView.swift */,
+				C84AF7332C2C26F2004D8489 /* WalkingChicken.swift */,
 			);
 			path = ComponentView;
 			sourceTree = "<group>";
@@ -174,6 +185,7 @@
 				C84AF7162C2B2F26004D8489 /* EggCatchView.swift */,
 				C84985782C2A85EB0011B300 /* EggGachaView.swift */,
 				C813AD092C2ABBAB0096997D /* EggRevealView.swift */,
+				C84AF71E2C2BFA30004D8489 /* StartBreakView.swift */,
 				C84985772C2A85EB0011B300 /* BreakSessionView.swift */,
 				C84985762C2A85EB0011B300 /* BreakEndActionView.swift */,
 				C84985722C2A85EB0011B300 /* CongratulationsView.swift */,
@@ -205,6 +217,9 @@
 		C8F19EE92C29987200F80627 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				C84AF72B2C2C1F97004D8489 /* CallOfDanger.wav */,
+				C84AF72C2C2C1F97004D8489 /* CallOfGacha.wav */,
+				C84AF71C2C2BF570004D8489 /* ChickenSkins.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -267,8 +282,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C84AF72E2C2C1F97004D8489 /* CallOfGacha.wav in Resources */,
 				C81B92082C24119D00282A88 /* Preview Assets.xcassets in Resources */,
 				C81B92052C24119D00282A88 /* Assets.xcassets in Resources */,
+				C84AF72D2C2C1F97004D8489 /* CallOfDanger.wav in Resources */,
+				C84AF71D2C2BF570004D8489 /* ChickenSkins.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,10 +317,12 @@
 				C81B92012C24119C00282A88 /* Mini2App.swift in Sources */,
 				C8F19EE82C2980B300F80627 /* HapticsManager.swift in Sources */,
 				C813AD022C2A8ABA0096997D /* TimePickerComponent.swift in Sources */,
+				C84AF71F2C2BFA30004D8489 /* StartBreakView.swift in Sources */,
 				C813AD042C2A8B910096997D /* SetTimerView.swift in Sources */,
 				C8F19EE42C29508C00F80627 /* Config.swift in Sources */,
 				C84985852C2A85EB0011B300 /* BreakEndActionView.swift in Sources */,
 				C84985872C2A85EB0011B300 /* EggGachaView.swift in Sources */,
+				C84AF7342C2C26F2004D8489 /* WalkingChicken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +460,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mini2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PeTock;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -471,6 +492,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Mini2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PeTock;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

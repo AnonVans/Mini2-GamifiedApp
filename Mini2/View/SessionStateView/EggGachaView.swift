@@ -11,6 +11,7 @@ struct EggGachaView: View {
     var gachaVM = EggGachaViewModel.getInstance()
     
     @Binding var sessionState: SessionState
+    var chick: Chicken = Chicken()
     
     var body: some View {
         
@@ -31,7 +32,9 @@ struct EggGachaView: View {
                             .frame(width: 154, alignment: .topLeading)
                     }
                     
-                    Rectangle()
+                    Image(chick.getChickenName())
+                        .resizable()
+                        .scaledToFit()
                         .frame(width: 160, height: 190)
                 }
                     
@@ -39,13 +42,16 @@ struct EggGachaView: View {
                 
                 HStack {
                     ForEach(Array(1...gachaVM.getEggAmount()), id: \.self) { egg in
-                        Rectangle()
-                            .frame(width: 75, height: 75)
+                        Image("Egg")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 100)
                             .onTapGesture {
                                 sessionState = .OpenEggs
                             }
                     }
                 }
+                .offset(y: -25)
                     
                 Text("Choose one and get new skin")
                     .font(.system(size: 16, weight: .semibold))

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SetTimerView: View {
-    @Binding var itemSignal: Bool
-    @Binding var startSignal: Bool
+//    @Binding var itemSignal: Bool
+//    @Binding var startSignal: Bool
     
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     
@@ -23,24 +23,30 @@ struct SetTimerView: View {
                     Spacer()
                     
                     VStack(alignment: .center){
-                        Image("telur collected items")
-                        Text("Collected")
-                        Text("Items")
+                        Image("Egg")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                        Text("Collected\nItems")
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.primary5)
                     }
                     .padding(.trailing, 20)
                     .onTapGesture {
-                        itemSignal.toggle()
+//                        itemSignal.toggle()
                     }
                 }
                 
-                Image("ayam trial")
+                Image("DefaultNormalLookLeft")
                     .resizable()
                     .foregroundColor(.blue)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 120, height: 142)
                 
                 Text("Start studying today!")
-                    .font(.system(size: 24))
+                    .font(.system(size: 27))
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.primary6)
                 
                 
                 TimePickerComponent()
@@ -52,7 +58,7 @@ struct SetTimerView: View {
                         .onTapGesture {
                             timeAssignVM.resetCurrentSession()
                             timeAssignVM.updateSession()
-                            startSignal.toggle()
+//                            startSignal.toggle()
                         }
                 }
             }
@@ -60,6 +66,6 @@ struct SetTimerView: View {
     }
 }
 
-//#Preview {
-//    SetTimerView()
-//}
+#Preview {
+    SetTimerView()
+}

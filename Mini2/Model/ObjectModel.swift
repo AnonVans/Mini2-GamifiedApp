@@ -7,12 +7,12 @@
 
 import Foundation
 
-class Chicken {
+class Chicken: Codable {
     var skin: ChickenSkin
     var state: ChickentState
     var pose: ChickenPose
     
-    init(skin: ChickenSkin = .Default, state: ChickentState = .Normal, pose: ChickenPose = .Regular) {
+    init(skin: ChickenSkin = .Detective, state: ChickentState = .Normal, pose: ChickenPose = .LookLeft) {
         self.skin = skin
         self.state = state
         self.pose = pose
@@ -33,7 +33,7 @@ class Chicken {
     }
 }
 
-class CollectionItem {
+class CollectionItem: Codable {
     var chicken: Chicken
     var locked: Bool
     

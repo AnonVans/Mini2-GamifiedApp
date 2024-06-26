@@ -25,7 +25,14 @@ class EggGachaViewModel {
     }
     
     func fetchData() {
-        
+        do {
+            let url = Bundle.main.url(forResource: "ChickenSkins", withExtension: "json")
+            let data = try Data(contentsOf: url!)
+            let decoder = JSONDecoder()
+            self.chickenSkins = try decoder.decode([CollectionItem].self, from: data)
+        } catch {
+            print("Failed to fetch data: \(error.localizedDescription)")
+        }
     }
     
     func getChickens() -> [CollectionItem] {
@@ -57,8 +64,8 @@ class EggGachaViewModel {
     }
     
     func gachaChicken() -> Chicken {
-        let maxIndex = CGFloat(chickenSkins.count - 1)
-        let chickenItem = chickenSkins[Int(CGFloat.random(in: 0...maxIndex))]
+        let maxIndex = CGFloat(chickenSkins.count - 2)
+        let chickenItem = chickenSkins[Int(CGFloat.random(in: 1...maxIndex))]
         let prizeChick = chickenItem.chicken
         
         if checkChickenLock(prizeChick) {

@@ -35,23 +35,26 @@ struct DraggableView: View {
     var body: some View{
         ZStack {
             Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 185)
             
             if basketVM.show[0] {
-                Image("telor")
+                Image("Egg")
                     .resizable()
                     .frame(width: 60, height: 100)
                     .offset(x: -30, y: -50)
                     .rotationEffect(.degrees(-10))
             }
             if basketVM.show[1] {
-                Image("telor")
+                Image("Egg")
                     .resizable()
                     .frame(width: 60, height: 100)
                     .offset(x: 35, y: -50)
                     .rotationEffect(.degrees(10))
             }
             if basketVM.show[2] {
-                Image("telor")
+                Image("Egg")
                     .resizable()
                     .frame(width: 60, height: 100)
                     .offset(x: 00, y: -35)
@@ -62,23 +65,25 @@ struct DraggableView: View {
     }
 }
 
+//Delete Later
 struct testBasket: View {
     var body: some View {
         ZStack {
-            Image("basket")
-            //            .position(location)
-            //            .gesture(dragGesture)
-            Image("telor")
+            Image("Nest")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 185)
+            Image("Egg")
                 .resizable()
                 .frame(width: 60, height: 100)
                 .offset(x: -30, y: -50)
                 .rotationEffect(.degrees(-10))
-            Image("telor")
+            Image("Egg")
                 .resizable()
                 .frame(width: 60, height: 100)
                 .offset(x: 35, y: -50)
                 .rotationEffect(.degrees(10))
-            Image("telor")
+            Image("Egg")
                 .resizable()
                 .frame(width: 60, height: 100)
                 .offset(x: 00, y: -35)
