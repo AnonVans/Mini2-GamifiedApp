@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StudySessionPageView: View {
     @State var sessionState: SessionState = .StudySession
+    @State var specialEvent = false
     
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     var hapticsManager = HapticsManager.getIntance()
@@ -36,11 +37,9 @@ struct StudySessionPageView: View {
                     EggCatchView(sessionState: $sessionState)
 //                    EmptyView()
                 case .LateToBreak:
-                    //Negative case
-                    Text("Something")
+                    FailedToBreak(sessionState: $sessionState)
                 case .FailedToCatch:
-                    //Negative case
-                    Text("Something")
+                    FailedToBreak(failedType: .FailCatch, sessionState: $sessionState)
                 case .ChooseEggs:
                     EggGachaView(sessionState: $sessionState)
 //                    EmptyView()
@@ -70,7 +69,11 @@ struct StudySessionPageView: View {
 //                    EmptyView()
                 }
             } else {
-                CongratulationsView()
+                if specialEvent {
+                    SpecialLaunchView()
+                } else {
+                    CongratulationsView(specialEvent: $specialEvent)
+                }
             }
         }
         .navigationBarBackButtonHidden()

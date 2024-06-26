@@ -9,19 +9,11 @@ import SwiftUI
 
 struct TimePickerComponent: View {
     @State private var selectedHour = 1
-    @State private var totalSession = 3
+    @State private var studySession = 2
+    @State private var breakSession = 1
     
     private let hours = Array(1..<7)
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
-    
-    // Function to calculate learning and break cycles
-//    func calculateCycles(for hours: Int) -> Int  {
-//        
-//        let totalMinutes = hours * 60
-//        let cycleMinutes = 25 + 5
-//        let numberOfCycles = totalMinutes / cycleMinutes
-//        return numberOfCycles
-//    }
     
     var body: some View {
         ZStack {
@@ -57,7 +49,8 @@ struct TimePickerComponent: View {
                 .frame(width: 220, height: 150)
                 .onChange(of: selectedHour) { oldValue, newValue in
                     timeAssignVM.timeAssignment(selectedHour)
-                    totalSession = timeAssignVM.totalSession
+                    studySession = timeAssignVM.studySessionTotal
+                    breakSession = timeAssignVM.breakSessionTotal
                 }
                 
                 Text("Hours")
@@ -82,7 +75,7 @@ struct TimePickerComponent: View {
                       .shadow(color: Color.black.opacity(0.3), radius: 2, x: 3, y: 4)
                     
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("\(timeAssignVM.studySessionTotal)x")
+                        Text("\(studySession)x")
                             .font(.system(size: 19))
                             .fontWeight(.bold)
                             .foregroundStyle(.primary5)
@@ -114,7 +107,7 @@ struct TimePickerComponent: View {
                       .shadow(color: Color.black.opacity(0.3), radius: 2, x: 3, y: 4)
                     
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("\(timeAssignVM.breakSessionTotal)x")
+                        Text("\(breakSession)x")
                             .font(.system(size: 19))
                             .fontWeight(.bold)
                             .foregroundStyle(.yellow5)

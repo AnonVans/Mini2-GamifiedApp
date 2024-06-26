@@ -1,16 +1,18 @@
 //
-//  EggRevealView.swift
+//  SpecialLaunchView.swift
 //  Mini2
 //
-//  Created by Stevans Calvin Candra on 25/06/24.
+//  Created by Stevans Calvin Candra on 27/06/24.
 //
 
 import SwiftUI
 
-struct EggRevealView: View {
-    var gachaVM = EggGachaViewModel.getInstance()
+struct SpecialLaunchView: View {
+    @Environment(\.dismiss) var dismiss
     @State var chicken: Chicken = Chicken()
-    @Binding var sessionState: SessionState
+
+    var timeAssignVM = TimeAssignmentViewModel.getInstance()
+    var gachaVM = EggGachaViewModel.getInstance()
     
     var body: some View {
         VStack {
@@ -33,7 +35,7 @@ struct EggRevealView: View {
                     .frame(height: 225)
                     .offset(x: 15)
                 
-                Image("TelorBelahDua")
+                Image("SpecialEggBreak")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 360)
@@ -47,12 +49,14 @@ struct EggRevealView: View {
                 CustomButton(type: .Solid, text: "Use")
                     .onTapGesture {
                         gachaVM.updateChicken(chicken)
-                        sessionState = .StartBreak
+                        timeAssignVM.resetCurrentSession()
+                        dismiss()
                     }
                 
-                CustomButton(type: .Outline, text: "Keep Skin")
+                CustomButton(type: .Outline, text: "Save")
                     .onTapGesture {
-                        sessionState = .StartBreak
+                        timeAssignVM.resetCurrentSession()
+                        dismiss()
                     }
                     .padding(.top, 15)
             }
@@ -61,11 +65,15 @@ struct EggRevealView: View {
             Spacer()
         }
         .onAppear {
-            chicken = gachaVM.gachaChicken()
+            let chickens = gachaVM.getChickens()
+            chicken = chickens.last?.chicken ?? Chicken()
+            
+            chicken.state = .Happy
+            chicken.pose = .HandsUp
         }
     }
 }
 
-//#Preview {
-//    EggRevealView()
-//}
+#Preview {
+    SpecialLaunchView()
+}

@@ -92,7 +92,7 @@ class HapticsManager {
         
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
         let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 1)
-        let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [intensity,sharpness], relativeTime: 0, duration: 5)
+        let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [intensity,sharpness], relativeTime: 0, duration: 30)
         hapticsEvents.append(event)
         
         let audioEvent = CHHapticEvent(audioResourceID: prepareAudio(audioName), parameters: [CHHapticEventParameter(parameterID: .audioVolume, value: 1.0)], relativeTime: 0)

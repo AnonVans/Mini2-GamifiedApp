@@ -57,7 +57,7 @@ struct StudySessionTimerView: View {
                         
                     Spacer()
                     
-                    Text("You know what?\nChickens have good time management, we will rest strict to schedule")
+                    Text("You know what?\nChicki has good time management, we will take a roosting break on time!")
                         .font(.system(size: 19))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.primary5)

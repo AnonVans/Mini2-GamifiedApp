@@ -13,13 +13,13 @@ struct ContentView: View {
         
     var body: some View {
         NavigationStack {
-//            SetTimerView(itemSignal: $itemSignal, startSignal: $startSignal)
-//                .navigationDestination(isPresented: $itemSignal) {
-//                    CollectableItemsView()
-//                }
-//                .navigationDestination(isPresented: $startSignal) {
-//                    StudySessionPageView()
-//                }
+            SetTimerView(itemSignal: $itemSignal, startSignal: $startSignal)
+                .navigationDestination(isPresented: $itemSignal) {
+                    CollectableItemsView()
+                }
+                .navigationDestination(isPresented: $startSignal) {
+                    StudySessionPageView(sessionState: .StudySession)
+                }
         }
     }
 }

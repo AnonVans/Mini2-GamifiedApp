@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Chicken: Codable {
+struct Chicken: Hashable, Codable {
     var skin: ChickenSkin
     var state: ChickentState
     var pose: ChickenPose
@@ -33,7 +33,7 @@ class Chicken: Codable {
     }
 }
 
-class CollectionItem: Codable {
+struct CollectionItem: Hashable, Codable {
     var chicken: Chicken
     var locked: Bool
     

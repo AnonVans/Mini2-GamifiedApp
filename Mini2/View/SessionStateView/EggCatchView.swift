@@ -22,18 +22,24 @@ struct EggCatchView: View {
     @State private var eggBroken: [Bool] = Array(repeating: false, count: 3)
     @State private var brokenEggPositions: [CGPoint] = Array(repeating: CGPoint(x: 0, y: 650), count: 3)
     
+    @Binding var sessionState: SessionState
+    @State var chick: Chicken = Chicken()
+    
     var basketVM = BasketDragViewModel.getInstance()
     var gachaVM = EggGachaViewModel.getInstance()
-    
-    @Binding var sessionState: SessionState
     
     var body: some View {
         ZStack {
             if(basketTapped == false){
-                Image("DefaultNormalLookLeft")
+                Image(chick.getChickenName())
                     .EggCatchChickIMG
                     .padding(.top, 50)
                     .position(CGPoint(x: 200.0, y: 100.0))
+                
+                Text("Catch the egg!")
+                    .font(.system(size: 27))
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.primary6)
                 
                 HStack{
                     Image("leftarrow")
@@ -71,7 +77,7 @@ struct EggCatchView: View {
                     DraggableView(location: $basketPosition, imageName: "Nest")
                         .onChange(of: basketPosition){ oldValue, newValue in
                             self.basketPosition.x = newValue.x
-                                //                            print("Basket position updated: \(newValue)")
+//                            print("Basket position updated: \(newValue)")
                         }
                     
                     VStack{
@@ -85,7 +91,7 @@ struct EggCatchView: View {
                                     .opacity(index <= currentEggIndex && !eggDisappear[index] ? 1 : 0)
                                     .animation(.default, value: currentEggIndex)
                                 
-                                Image("DefaultNormalLookLeft")
+                                Image(chick.getChickenName())
                                     .EggCatchChickIMG
                                     .padding(.top, 50)
                                     .position(chickenPositions[index])

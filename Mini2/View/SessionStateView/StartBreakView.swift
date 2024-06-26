@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StartBreakView: View {
     @Binding var sessionState: SessionState
-    @State var chicken = Chicken(state: .Happy, pose: .HandsUp)
+    @State var chicken = Chicken()
     
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     
@@ -55,6 +55,10 @@ struct StartBreakView: View {
                     }
                     .offset(y: -50)
             }
+        }
+        .onAppear {
+            chicken.state = .Happy
+            chicken.pose = .HandsUp
         }
     }
 }

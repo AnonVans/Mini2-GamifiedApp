@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BeforeBreakView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    @State private var timeRemaining = 30.0
+    @State private var timeRemaining = 10.0
     @State private var yAmount = 575.0
     @State private var swipedUp = false
     
@@ -31,7 +31,7 @@ struct BeforeBreakView: View {
             
             VStack {
                 ZStack {
-                    TimerComponent(currDuration: 30, signal: $studySignal)
+                    TimerComponent(currDuration: Int(timeRemaining), signal: $studySignal)
                         .onChange(of: studySignal) { oldValue, newValue in
                             sessionState = .LateToBreak
                         }
@@ -76,6 +76,10 @@ struct BeforeBreakView: View {
                     }
                 }
             }
+        }
+        .onAppear {
+            chicken.state = .Happy
+            chicken.pose = .HandsUp
         }
     }
 }

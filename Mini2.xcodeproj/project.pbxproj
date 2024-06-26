@@ -34,6 +34,8 @@
 		C84AF72D2C2C1F97004D8489 /* CallOfDanger.wav in Resources */ = {isa = PBXBuildFile; fileRef = C84AF72B2C2C1F97004D8489 /* CallOfDanger.wav */; };
 		C84AF72E2C2C1F97004D8489 /* CallOfGacha.wav in Resources */ = {isa = PBXBuildFile; fileRef = C84AF72C2C2C1F97004D8489 /* CallOfGacha.wav */; };
 		C84AF7342C2C26F2004D8489 /* WalkingChicken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7332C2C26F2004D8489 /* WalkingChicken.swift */; };
+		C84AF7362C2C69C9004D8489 /* FailedToBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7352C2C69C9004D8489 /* FailedToBreak.swift */; };
+		C84AF7382C2C8606004D8489 /* SpecialLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7372C2C8606004D8489 /* SpecialLaunchView.swift */; };
 		C88CA5902C2698B200815471 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58F2C2698B200815471 /* Extensions.swift */; };
 		C8F19EE42C29508C00F80627 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE32C29508C00F80627 /* Config.swift */; };
 		C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE52C2976A500F80627 /* ObjectModel.swift */; };
@@ -70,6 +72,8 @@
 		C84AF72B2C2C1F97004D8489 /* CallOfDanger.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CallOfDanger.wav; sourceTree = "<group>"; };
 		C84AF72C2C2C1F97004D8489 /* CallOfGacha.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CallOfGacha.wav; sourceTree = "<group>"; };
 		C84AF7332C2C26F2004D8489 /* WalkingChicken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingChicken.swift; sourceTree = "<group>"; };
+		C84AF7352C2C69C9004D8489 /* FailedToBreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedToBreak.swift; sourceTree = "<group>"; };
+		C84AF7372C2C8606004D8489 /* SpecialLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialLaunchView.swift; sourceTree = "<group>"; };
 		C88CA58F2C2698B200815471 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C8F19EE32C29508C00F80627 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C8F19EE52C2976A500F80627 /* ObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModel.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			children = (
 				C84985742C2A85EB0011B300 /* StudySessionTimerView.swift */,
 				C84985702C2A85EB0011B300 /* BeforeBreakView.swift */,
+				C84AF7352C2C69C9004D8489 /* FailedToBreak.swift */,
 				C84AF7162C2B2F26004D8489 /* EggCatchView.swift */,
 				C84985782C2A85EB0011B300 /* EggGachaView.swift */,
 				C813AD092C2ABBAB0096997D /* EggRevealView.swift */,
@@ -189,6 +194,7 @@
 				C84985772C2A85EB0011B300 /* BreakSessionView.swift */,
 				C84985762C2A85EB0011B300 /* BreakEndActionView.swift */,
 				C84985722C2A85EB0011B300 /* CongratulationsView.swift */,
+				C84AF7372C2C8606004D8489 /* SpecialLaunchView.swift */,
 			);
 			path = SessionStateView;
 			sourceTree = "<group>";
@@ -298,9 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84985802C2A85EB0011B300 /* BeforeBreakView.swift in Sources */,
+				C84AF7362C2C69C9004D8489 /* FailedToBreak.swift in Sources */,
 				C849857D2C2A85EB0011B300 /* CustomButton.swift in Sources */,
 				5B3599EE2C27D0480026E929 /* TimeAssignmentViewModel.swift in Sources */,
 				C84985822C2A85EB0011B300 /* CongratulationsView.swift in Sources */,
+				C84AF7382C2C8606004D8489 /* SpecialLaunchView.swift in Sources */,
 				C84AF7172C2B2F26004D8489 /* EggCatchView.swift in Sources */,
 				C84AF71B2C2BEF6C004D8489 /* CollectableItemsView.swift in Sources */,
 				C84985832C2A85EB0011B300 /* ContentView.swift in Sources */,

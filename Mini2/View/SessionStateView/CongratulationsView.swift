@@ -9,8 +9,11 @@ import SwiftUI
 
 struct CongratulationsView: View {
     @Environment(\.dismiss) var dismiss
-    @State var chicken = Chicken(state: .Happy, pose: .HandsUp)
+    @State var chicken = Chicken()
+    @State var specialPrize = false
+    @Binding var specialEvent: Bool
     
+    var gachaVM = EggGachaViewModel.getInstance()
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     
     var body: some View {
@@ -46,16 +49,28 @@ struct CongratulationsView: View {
                     
                 Spacer()
                 
-                CustomButton(type: .Solid, width: 200.0, text: "Back to Timer")
+                CustomButton(type: .Solid, width: 200.0, text: specialPrize ? "Claim Reward" : "Back to Timer")
                     .onTapGesture {
-                        dismiss()
+                        if specialPrize {
+                            specialEvent = true
+                        } else {
+                            timeAssignVM.resetCurrentSession()
+                            dismiss()
+                        }
                     }
                     .offset(y: -50)
             }
         }
+        .onAppear {
+            chicken.state = .Happy
+            chicken.pose = .HandsUp
+            
+            let chickens = gachaVM.getChickens()
+            specialPrize = chickens.last?.locked ?? false
+        }
     }
 }
 
-#Preview {
-    CongratulationsView()
-}
+//#Preview {
+//    CongratulationsView()
+//}

@@ -14,7 +14,6 @@ struct EggGachaView: View {
     var chick: Chicken = Chicken()
     
     var body: some View {
-        
         ZStack {
             VStack {
                 Spacer()

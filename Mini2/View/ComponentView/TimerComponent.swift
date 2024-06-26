@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum TimerType: String {
-    case Swiper = "Swipe"
-    case Regular = "Reg"
-    case Break = "Break"
-}
-
 struct TimerComponent: View {
     @State var currDuration = 15
     @State var timer: Timer?

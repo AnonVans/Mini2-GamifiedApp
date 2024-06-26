@@ -7,6 +7,17 @@
 
 import Foundation
 
+enum TimerType: String {
+    case Swiper = "Swipe"
+    case Regular = "Reg"
+    case Break = "Break"
+}
+
+enum WarningType: Int {
+    case FailBreak = -1
+    case FailCatch = 0
+}
+
 enum ButtonType {
     case Solid
     case Outline

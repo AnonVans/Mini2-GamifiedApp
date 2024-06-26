@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct SetTimerView: View {
-//    @Binding var itemSignal: Bool
-//    @Binding var startSignal: Bool
+    @Binding var itemSignal: Bool
+    @Binding var startSignal: Bool
+    
+    @State var chick: Chicken = Chicken()
     
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     
@@ -33,39 +35,39 @@ struct SetTimerView: View {
                     }
                     .padding(.trailing, 20)
                     .onTapGesture {
-//                        itemSignal.toggle()
+                        itemSignal.toggle()
                     }
                 }
-                
-                Image("DefaultNormalLookLeft")
+                Spacer()
+            }
+            
+            VStack {
+                Image(chick.getChickenName())
                     .resizable()
-                    .foregroundColor(.blue)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 120, height: 142)
+                    .scaledToFit()
+                    .frame(width: 175)
                 
                 Text("Start studying today!")
                     .font(.system(size: 27))
                     .fontWeight(.semibold)
                     .foregroundStyle(.primary6)
-                
+                    .offset(y: 10)
                 
                 TimePickerComponent()
                 
-                Button {
-                    print("Button pressed")
-                } label: {
-                    CustomButton(type: .Solid, size: .Large, text: "Start")
-                        .onTapGesture {
-                            timeAssignVM.resetCurrentSession()
-                            timeAssignVM.updateSession()
-//                            startSignal.toggle()
-                        }
-                }
+                CustomButton(type: .Solid, size: .Large, text: "Start")
+                    .onTapGesture {
+                        timeAssignVM.resetCurrentSession()
+                        timeAssignVM.updateSession()
+                        startSignal.toggle()
+                    }
+                    .padding(.top, 25)
             }
+            .offset(y: 25)
         }
     }
 }
 
-#Preview {
-    SetTimerView()
-}
+//#Preview {
+//    SetTimerView()
+//}
