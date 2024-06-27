@@ -72,11 +72,9 @@ class TimeAssignmentViewModel: ObservableObject {
             //Return Study Session
             if studyTimeinMinutes > 30 {
                 self.studyTimeinMinutes -= 25
-//                self.sessionDuration = 25*60
                 print("25 Minute Study")
                 self.sessionDuration = 10
             } else {
-//                self.sessionDuration = self.studyTimeinMinutes*60
                 self.studyTimeinMinutes = 0
                 print("Irregular Minute Study")
                 self.sessionDuration = 10
@@ -86,12 +84,10 @@ class TimeAssignmentViewModel: ObservableObject {
             let currBreak = getBreakSession()
             if currBreak%4 == 0 {
                 self.studyTimeinMinutes -= 15
-//                self.sessionDuration = 15*60
                 print("15 Minute Break")
                 self.sessionDuration = 10
             } else {
                 self.studyTimeinMinutes -= 5
-//                self.sessionDuration = 5*60
                 print("5 Minute Break")
                 self.sessionDuration = 10
             }

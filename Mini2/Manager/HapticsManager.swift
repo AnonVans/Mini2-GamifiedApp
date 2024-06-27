@@ -18,8 +18,6 @@ class HapticsManager {
     init(engineRestart: Bool = false, engine: CHHapticEngine? = nil) {
         self.engineRestart = engineRestart
         self.engine = engine
-//        self.studyPlayer = prepareHapticsPattern("CallOfDanger")
-//        self.breakPlayer = prepareHapticsPattern("CallOfGacha")
         
         prepareHaptics()
     }
