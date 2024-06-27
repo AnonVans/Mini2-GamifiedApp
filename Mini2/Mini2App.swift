@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Mini2App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.light)
         }
+        .modelContainer(for: [
+            SkinsDataModel.self
+        ])
     }
 }
