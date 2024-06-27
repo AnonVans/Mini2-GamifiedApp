@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FailedToBreak: View {
     @State var failedType: WarningType = .FailBreak
-    @State var chick: Chicken = Chicken()
+    @State var chick: Chicken = UserViewModel.readChick()
 
     @Binding var sessionState: SessionState
     

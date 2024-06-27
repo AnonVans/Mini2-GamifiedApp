@@ -7,6 +7,16 @@
 
 import Foundation
 
+struct CollectionItem: Hashable, Codable {
+    var chicken: Chicken
+    var locked: Bool
+    
+    init(chicken: Chicken = Chicken(), locked: Bool = true) {
+        self.chicken = chicken
+        self.locked = locked
+    }
+}
+
 struct Chicken: Hashable, Codable {
     var skin: ChickenSkin
     var state: ChickentState
@@ -33,12 +43,3 @@ struct Chicken: Hashable, Codable {
     }
 }
 
-struct CollectionItem: Hashable, Codable {
-    var chicken: Chicken
-    var locked: Bool
-    
-    init(chicken: Chicken = Chicken(), locked: Bool = true) {
-        self.chicken = chicken
-        self.locked = locked
-    }
-}

@@ -11,7 +11,7 @@ struct EggGachaView: View {
     var gachaVM = EggGachaViewModel.getInstance()
     
     @Binding var sessionState: SessionState
-    var chick: Chicken = Chicken()
+    var chick: Chicken = UserViewModel.readChick()
     
     var body: some View {
         ZStack {

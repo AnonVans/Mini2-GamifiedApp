@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CollectableItemsView: View {
-    @State var chicken: Chicken = Chicken()
+    @Environment (\.modelContext) var dataContext
+    @Query(sort: \SkinsDataModel.id) var skinsData: [SkinsDataModel]
 
-    var gachaVM: EggGachaViewModel = EggGachaViewModel.getInstance()
+    @State var chicken: Chicken = UserViewModel.readChick()
+
     var columnLayout: [GridItem] = Array(repeating: GridItem(.fixed(70), spacing: 50, alignment: .center), count: 3)
+    var gachaVM: EggGachaViewModel = EggGachaViewModel.getInstance()
     
     var body: some View {
         VStack {
@@ -26,7 +30,7 @@ struct CollectableItemsView: View {
             VStack {
                 ScrollView {
                     LazyVGrid(columns: columnLayout) {
-                        ForEach(gachaVM.getChickens(), id: \.self) { chick in
+                        ForEach(SkinsDataViewModel.fetchItems(skinsData, dataContext), id: \.self) { chick in
                             VStack {
                                 ZStack {
                                     if chick.locked {
@@ -67,7 +71,9 @@ struct CollectableItemsView: View {
                             }
                             .onTapGesture {
                                 if !chick.locked {
-                                    chicken = chick.chicken
+                                    gachaVM.updateChicken(chick.chicken)
+                                    
+                                    chicken = UserViewModel.readChick()
                                 }
                             }
                         }
@@ -87,6 +93,9 @@ struct CollectableItemsView: View {
             )
         }
         .navigationTitle("Collected Skins")
+        .onAppear {
+            chicken = UserViewModel.readChick()
+        }
     }
 }
 

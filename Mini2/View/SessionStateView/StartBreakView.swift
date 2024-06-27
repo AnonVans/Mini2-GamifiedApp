@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StartBreakView: View {
     @Binding var sessionState: SessionState
-    @State var chicken = Chicken()
+    @State var chicken = UserViewModel.readChick()
     
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     

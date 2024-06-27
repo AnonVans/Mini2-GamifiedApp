@@ -15,7 +15,7 @@ struct BreakEndActionView: View {
     @State var timer: Timer?
     @State var limitCounter = 0
     @State var timerSignal: Bool = false
-    @State var chicken: Chicken = Chicken()
+    @State var chicken: Chicken = UserViewModel.readChick()
     
     @Binding var sessionState: SessionState
     
@@ -71,7 +71,7 @@ struct BreakEndActionView: View {
             }
                 
             VStack {
-                Text("Save your Chiki!")
+                Text("Save your Chicki!")
                   .font(.system(size: 27))
                   .fontWeight(.semibold)
                   .foregroundColor(.primary6)
@@ -116,7 +116,7 @@ struct BreakEndActionView: View {
 }
 
 struct BreakEndSuccessView: View {
-    @State var chicken = Chicken(state: .Happy, pose: .HandsUp)
+    @State var chicken = UserViewModel.readChick()
     @Binding var sessionState: SessionState
     
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
@@ -167,11 +167,15 @@ struct BreakEndSuccessView: View {
             .padding(10)
             
         }
+        .onAppear {
+            chicken.state = .Happy
+            chicken.pose = .HandsUp
+        }
     }
 }
 
 struct BreakEndFailedView: View {
-    @State var chicken = Chicken(state: .Scared)
+    @State var chicken = UserViewModel.readChick()
     @Binding var sessionState: SessionState
     
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
@@ -216,6 +220,9 @@ struct BreakEndFailedView: View {
                     }
                     .offset(y: -50)
             }
+        }
+        .onAppear {
+            chicken.state = .Scared
         }
     }
 }

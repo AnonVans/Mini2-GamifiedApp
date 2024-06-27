@@ -36,6 +36,10 @@
 		C84AF7342C2C26F2004D8489 /* WalkingChicken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7332C2C26F2004D8489 /* WalkingChicken.swift */; };
 		C84AF7362C2C69C9004D8489 /* FailedToBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7352C2C69C9004D8489 /* FailedToBreak.swift */; };
 		C84AF7382C2C8606004D8489 /* SpecialLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF7372C2C8606004D8489 /* SpecialLaunchView.swift */; };
+		C8790AB52C2D45CF001DB0B0 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8790AB42C2D45CF001DB0B0 /* UserViewModel.swift */; };
+		C8790AB72C2D819A001DB0B0 /* SkinsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8790AB62C2D819A001DB0B0 /* SkinsDataModel.swift */; };
+		C8790AB92C2D8313001DB0B0 /* SkinsDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8790AB82C2D8313001DB0B0 /* SkinsDataViewModel.swift */; };
+		C8790ABB2C2DCA7D001DB0B0 /* ChickenRevealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8790ABA2C2DCA7D001DB0B0 /* ChickenRevealView.swift */; };
 		C88CA5902C2698B200815471 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88CA58F2C2698B200815471 /* Extensions.swift */; };
 		C8F19EE42C29508C00F80627 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE32C29508C00F80627 /* Config.swift */; };
 		C8F19EE62C2976A500F80627 /* ObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F19EE52C2976A500F80627 /* ObjectModel.swift */; };
@@ -53,7 +57,6 @@
 		C81B92002C24119C00282A88 /* Mini2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini2App.swift; sourceTree = "<group>"; };
 		C81B92042C24119D00282A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C81B92072C24119D00282A88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C81E9BB42C2597C6008F45C4 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		C849856B2C2A85EB0011B300 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C849856C2C2A85EB0011B300 /* TimerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerComponent.swift; sourceTree = "<group>"; };
 		C849856E2C2A85EB0011B300 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
@@ -74,6 +77,10 @@
 		C84AF7332C2C26F2004D8489 /* WalkingChicken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingChicken.swift; sourceTree = "<group>"; };
 		C84AF7352C2C69C9004D8489 /* FailedToBreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedToBreak.swift; sourceTree = "<group>"; };
 		C84AF7372C2C8606004D8489 /* SpecialLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialLaunchView.swift; sourceTree = "<group>"; };
+		C8790AB42C2D45CF001DB0B0 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		C8790AB62C2D819A001DB0B0 /* SkinsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsDataModel.swift; sourceTree = "<group>"; };
+		C8790AB82C2D8313001DB0B0 /* SkinsDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsDataViewModel.swift; sourceTree = "<group>"; };
+		C8790ABA2C2DCA7D001DB0B0 /* ChickenRevealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenRevealView.swift; sourceTree = "<group>"; };
 		C88CA58F2C2698B200815471 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C8F19EE32C29508C00F80627 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		C8F19EE52C2976A500F80627 /* ObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModel.swift; sourceTree = "<group>"; };
@@ -135,8 +142,8 @@
 		C81B920E2C24128400282A88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C81E9BB42C2597C6008F45C4 /* UserDataModel.swift */,
 				C8F19EE52C2976A500F80627 /* ObjectModel.swift */,
+				C8790AB62C2D819A001DB0B0 /* SkinsDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +162,8 @@
 				5B3599ED2C27D0480026E929 /* TimeAssignmentViewModel.swift */,
 				C813AD072C2AAAD70096997D /* EggGachaViewModel.swift */,
 				C84AF7182C2B3ABC004D8489 /* BasketDragViewModel.swift */,
+				C8790AB42C2D45CF001DB0B0 /* UserViewModel.swift */,
+				C8790AB82C2D8313001DB0B0 /* SkinsDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -167,6 +176,7 @@
 				C813ACFF2C2A8ABA0096997D /* TimePickerComponent.swift */,
 				C849856E2C2A85EB0011B300 /* DraggableView.swift */,
 				C84AF7332C2C26F2004D8489 /* WalkingChicken.swift */,
+				C8790ABA2C2DCA7D001DB0B0 /* ChickenRevealView.swift */,
 			);
 			path = ComponentView;
 			sourceTree = "<group>";
@@ -304,9 +314,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84985802C2A85EB0011B300 /* BeforeBreakView.swift in Sources */,
+				C8790ABB2C2DCA7D001DB0B0 /* ChickenRevealView.swift in Sources */,
+				C8790AB92C2D8313001DB0B0 /* SkinsDataViewModel.swift in Sources */,
+				C8790AB52C2D45CF001DB0B0 /* UserViewModel.swift in Sources */,
 				C84AF7362C2C69C9004D8489 /* FailedToBreak.swift in Sources */,
 				C849857D2C2A85EB0011B300 /* CustomButton.swift in Sources */,
 				5B3599EE2C27D0480026E929 /* TimeAssignmentViewModel.swift in Sources */,
+				C8790AB72C2D819A001DB0B0 /* SkinsDataModel.swift in Sources */,
 				C84985822C2A85EB0011B300 /* CongratulationsView.swift in Sources */,
 				C84AF7382C2C8606004D8489 /* SpecialLaunchView.swift in Sources */,
 				C84AF7172C2B2F26004D8489 /* EggCatchView.swift in Sources */,

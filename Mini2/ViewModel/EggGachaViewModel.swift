@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 class EggGachaViewModel {
     private var eggAmount = 3
@@ -47,29 +48,26 @@ class EggGachaViewModel {
         return self.eggAmount
     }
     
-    func checkChickenLock(_ chicken: Chicken) -> Bool {
+    func checkChickenLock(_ chicken: Chicken, _ datas: [SkinsDataModel], _ dataModel: ModelContext) -> Bool {
         var isLocked: Bool = true
         
-        for newChick in chickenSkins {
-            if newChick.chicken.isSame(chicken) {
-                isLocked = newChick.locked
+        for newChick in datas {
+            if ((newChick.items?.chicken.isSame(chicken)) != nil) {
+                isLocked = ((newChick.items?.locked) != nil)
             }
         }
         
         return isLocked
     }
     
-    func unlockChicken() {
-        
-    }
-    
-    func gachaChicken() -> Chicken {
+    func gachaChicken(_ skinData: [SkinsDataModel], _ dataModel: ModelContext) -> Chicken {
         let maxIndex = CGFloat(chickenSkins.count - 2)
-        let chickenItem = chickenSkins[Int(CGFloat.random(in: 1...maxIndex))]
+        let rng = Int(CGFloat.random(in: 2...maxIndex))
+        let chickenItem = chickenSkins[rng]
         let prizeChick = chickenItem.chicken
         
-        if checkChickenLock(prizeChick) {
-            unlockChicken()
+        if checkChickenLock(prizeChick, skinData, dataModel) {
+            SkinsDataViewModel.unlockChicken(rng, skinData, dataModel)
         } else {
             //Tambah poin user
         }
@@ -78,6 +76,6 @@ class EggGachaViewModel {
     }
     
     func updateChicken(_ chick: Chicken) {
-        
+        UserViewModel.saveChick(chick)
     }
 }

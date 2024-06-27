@@ -13,7 +13,7 @@ struct BreakSessionView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     @Binding var sessionState: SessionState
-    @State var chicken: Chicken = Chicken()
+    @State var chicken: Chicken = UserViewModel.readChick()
     
     var body: some View {
         ZStack {
@@ -72,6 +72,10 @@ struct BreakSessionView: View {
                 
                 Spacer()
             }
+        }
+        .onAppear{
+            chicken.state = .Normal
+            chicken.pose = .LookLeft
         }
     }
 }

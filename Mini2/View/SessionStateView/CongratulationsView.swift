@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CongratulationsView: View {
+    @Environment (\.modelContext) var dataContext
+    @Query(sort: \SkinsDataModel.id) var skinsData: [SkinsDataModel]
+    
     @Environment(\.dismiss) var dismiss
-    @State var chicken = Chicken()
+    @State var chicken = UserViewModel.readChick()
     @State var specialPrize = false
     @Binding var specialEvent: Bool
     
-    var gachaVM = EggGachaViewModel.getInstance()
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     
     var body: some View {
@@ -65,7 +68,7 @@ struct CongratulationsView: View {
             chicken.state = .Happy
             chicken.pose = .HandsUp
             
-            let chickens = gachaVM.getChickens()
+            let chickens = SkinsDataViewModel.fetchItems(skinsData, dataContext)
             specialPrize = chickens.last?.locked ?? false
         }
     }

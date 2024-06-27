@@ -11,7 +11,7 @@ import SwiftData
 struct StudySessionTimerView: View {
     @State private var studySignal = false
     @Binding var sessionState: SessionState
-    @State var chicken: Chicken = Chicken()
+    @State var chicken: Chicken = UserViewModel.readChick()
     
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     

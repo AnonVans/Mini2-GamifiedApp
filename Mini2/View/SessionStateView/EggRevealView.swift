@@ -6,62 +6,73 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct EggRevealView: View {
-    var gachaVM = EggGachaViewModel.getInstance()
+    @Environment (\.modelContext) var dataContext
+    @Query(sort: \SkinsDataModel.id) var skinsData: [SkinsDataModel]
+    
     @State var chicken: Chicken = Chicken()
     @Binding var sessionState: SessionState
+    @State var showAll = false
+
+    var gachaVM = EggGachaViewModel.getInstance()
     
     var body: some View {
         VStack {
-            Text("Yeay!!")
-                .font(.system(size: 40))
-                .foregroundStyle(.primary6)
-                .bold()
-                .padding(.top, 25)
-            
-            Text(chicken.skin.rawValue)
-                .font(.system(size: 27))
-                .fontWeight(.semibold)
-                .foregroundStyle(.primary5)
-                .padding(.vertical, 25)
-            
-            ZStack {
-                Image(chicken.getChickenName())
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 225)
-                    .offset(x: 15)
+            if showAll {
+                Text("Yeay!!")
+                    .font(.system(size: 40))
+                    .foregroundStyle(.primary6)
+                    .bold()
+                    .padding(.top, 25)
                 
-                Image("TelorBelahDua")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 360)
-                    .offset(x: 1, y: 140)
-            }
-            
-            Spacer()
-            
-            VStack {
-                //compare userdefault chicken with gotten chicken
-                CustomButton(type: .Solid, text: "Use")
-                    .onTapGesture {
-                        gachaVM.updateChicken(chicken)
-                        sessionState = .StartBreak
-                    }
+                Text(chicken.skin.rawValue)
+                    .font(.system(size: 27))
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.primary5)
+                    .padding(.vertical, 25)
                 
-                CustomButton(type: .Outline, text: "Keep Skin")
-                    .onTapGesture {
-                        sessionState = .StartBreak
+                ZStack {
+                    Image(chicken.getChickenName())
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 225)
+                        .offset(x: 15)
+                    
+                    Image("TelorBelahDua")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 360)
+                        .offset(x: 1, y: 140)
+                }
+                
+                Spacer()
+                
+                VStack {
+                    if !chicken.isSame(UserViewModel.readChick()) {
+                        CustomButton(type: .Solid, text: "Use")
+                            .onTapGesture {
+                                gachaVM.updateChicken(chicken)
+                                sessionState = .StartBreak
+                            }
                     }
-                    .padding(.top, 15)
+                    
+                    CustomButton(type: .Outline, text: "Keep Skin")
+                        .onTapGesture {
+                            sessionState = .StartBreak
+                        }
+                        .padding(.top, 15)
+                }
+                .offset(y: 50)
+                
+                Spacer()
+            } else {
+                ChickenRevealView(skinName: chicken.getChickenName(), showAll: $showAll)
             }
-            .offset(y: 50)
-            
-            Spacer()
         }
         .onAppear {
-            chicken = gachaVM.gachaChicken()
+            chicken = gachaVM.gachaChicken(skinsData, dataContext)
         }
     }
 }

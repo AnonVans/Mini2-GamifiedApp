@@ -78,3 +78,14 @@ enum SessionState {
     case BreakActivityFailed
     case BreakActivitySuccess
 }
+
+enum UserDataEnum: String {
+    case Chicken = "DefaultChicken"
+    case Poin = "UserPoin"
+}
+
+enum EggRevealType {
+    case Regular
+    case SpecialLaunch
+}
+

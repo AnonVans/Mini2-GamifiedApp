@@ -11,7 +11,7 @@ struct SetTimerView: View {
     @Binding var itemSignal: Bool
     @Binding var startSignal: Bool
     
-    @State var chick: Chicken = Chicken()
+    @State var chick: Chicken = UserViewModel.readChick()
     
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     
@@ -64,6 +64,9 @@ struct SetTimerView: View {
                     .padding(.top, 25)
             }
             .offset(y: 25)
+        }
+        .onAppear {
+            chick = UserViewModel.readChick()
         }
     }
 }

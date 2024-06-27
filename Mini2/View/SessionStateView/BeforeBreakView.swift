@@ -14,13 +14,14 @@ struct BeforeBreakView: View {
     @State private var swipedUp = false
     
     @State private var studySignal = false
-    @State var chicken: Chicken = Chicken()
+    @State var chicken: Chicken = UserViewModel.readChick()
     
     @Binding var sessionState: SessionState
     
     var body: some View {
         ZStack {
-            WalkingChicken(chicken: chicken)
+            Image(chicken.getChickenName())
+                .position(CGPoint(x: 200.0, y: yAmount-290))
             
             LinearGradient(
                 colors: [.clear, .primaryBG],
@@ -59,8 +60,8 @@ struct BeforeBreakView: View {
                                 if timeRemaining > 0{
                                     timeRemaining -= 1
                                     
-                                    if(yAmount >= 500.0){
-                                        yAmount -= 100
+                                    if(yAmount >= 525.0){
+                                        yAmount -= 75
                                     } else {
                                         yAmount = 575.0
                                     }

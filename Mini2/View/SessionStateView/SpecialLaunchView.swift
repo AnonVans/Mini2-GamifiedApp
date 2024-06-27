@@ -6,67 +6,81 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SpecialLaunchView: View {
+    @Environment (\.modelContext) var dataContext
+    @Query(sort: \SkinsDataModel.id) var skinsData: [SkinsDataModel]
+    
     @Environment(\.dismiss) var dismiss
     @State var chicken: Chicken = Chicken()
+    @State var showAll = false
 
     var timeAssignVM = TimeAssignmentViewModel.getInstance()
     var gachaVM = EggGachaViewModel.getInstance()
     
     var body: some View {
         VStack {
-            Text("Yeay!!")
-                .font(.system(size: 40))
-                .foregroundStyle(.primary6)
-                .bold()
-                .padding(.top, 25)
-            
-            Text(chicken.skin.rawValue)
-                .font(.system(size: 27))
-                .fontWeight(.semibold)
-                .foregroundStyle(.primary5)
-                .padding(.vertical, 25)
-            
-            ZStack {
-                Image(chicken.getChickenName())
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 225)
-                    .offset(x: 15)
+            if showAll {
+                Text("Yeay!!")
+                    .font(.system(size: 40))
+                    .foregroundStyle(.primary6)
+                    .bold()
+                    .padding(.top, 25)
                 
-                Image("SpecialEggBreak")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 360)
-                    .offset(x: 1, y: 140)
-            }
-            
-            Spacer()
-            
-            VStack {
-                //compare userdefault chicken with gotten chicken
-                CustomButton(type: .Solid, text: "Use")
-                    .onTapGesture {
-                        gachaVM.updateChicken(chicken)
-                        timeAssignVM.resetCurrentSession()
-                        dismiss()
-                    }
+                Text(chicken.skin.rawValue)
+                    .font(.system(size: 27))
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.primary5)
+                    .padding(.vertical, 25)
                 
-                CustomButton(type: .Outline, text: "Save")
-                    .onTapGesture {
-                        timeAssignVM.resetCurrentSession()
-                        dismiss()
-                    }
-                    .padding(.top, 15)
+                ZStack {
+                    Image(chicken.getChickenName())
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 225)
+                        .offset(x: 15)
+                    
+                    Image("SpecialEggBreak")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 360)
+                        .offset(x: 1, y: 140)
+                }
+                
+                Spacer()
+                
+                VStack {
+                    //compare userdefault chicken with gotten chicken
+                    CustomButton(type: .Solid, text: "Use")
+                        .onTapGesture {
+                            var chick = chicken
+                            chick.state = .Normal
+                            chick.pose = .LookLeft
+                            
+                            gachaVM.updateChicken(chick)
+                            timeAssignVM.resetCurrentSession()
+                            dismiss()
+                        }
+                    
+                    CustomButton(type: .Outline, text: "Save")
+                        .onTapGesture {
+                            timeAssignVM.resetCurrentSession()
+                            dismiss()
+                        }
+                        .padding(.top, 15)
+                }
+                .offset(y: 50)
+                
+                Spacer()
+            } else {
+                ChickenRevealView(skinName: chicken.getChickenName(), type: .SpecialLaunch, showAll: $showAll)
             }
-            .offset(y: 50)
-            
-            Spacer()
         }
         .onAppear {
-            let chickens = gachaVM.getChickens()
+            let chickens = SkinsDataViewModel.fetchItems(skinsData, dataContext)
             chicken = chickens.last?.chicken ?? Chicken()
+            SkinsDataViewModel.unlockChicken(chickens.count-1, skinsData, dataContext)
             
             chicken.state = .Happy
             chicken.pose = .HandsUp
@@ -74,6 +88,6 @@ struct SpecialLaunchView: View {
     }
 }
 
-#Preview {
-    SpecialLaunchView()
-}
+//#Preview {
+//    SpecialLaunchView()
+//}

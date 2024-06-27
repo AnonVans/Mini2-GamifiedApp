@@ -23,7 +23,7 @@ struct EggCatchView: View {
     @State private var brokenEggPositions: [CGPoint] = Array(repeating: CGPoint(x: 0, y: 650), count: 3)
     
     @Binding var sessionState: SessionState
-    @State var chick: Chicken = Chicken()
+    @State var chick: Chicken = UserViewModel.readChick()
     
     var basketVM = BasketDragViewModel.getInstance()
     var gachaVM = EggGachaViewModel.getInstance()

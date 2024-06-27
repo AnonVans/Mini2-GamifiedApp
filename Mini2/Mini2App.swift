@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Mini2App: App {
@@ -14,5 +15,8 @@ struct Mini2App: App {
             ContentView()
                 .preferredColorScheme(.light)
         }
+        .modelContainer(for: [
+            SkinsDataModel.self
+        ])
     }
 }
