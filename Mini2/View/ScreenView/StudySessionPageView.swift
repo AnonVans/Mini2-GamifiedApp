@@ -23,7 +23,6 @@ struct StudySessionPageView: View {
                 switch sessionState {
                 case .StudySession:
                     StudySessionTimerView(sessionState: $sessionState)
-//                    EmptyView()
                 case .StudyActivity:
                     BeforeBreakView(sessionState: $sessionState)
                         .onAppear {
@@ -32,26 +31,20 @@ struct StudySessionPageView: View {
                         .onDisappear {
                             hapticsManager.stopStudyHaptics()
                         }
-//                    EmptyView()
                 case .EggCatch:
                     EggCatchView(sessionState: $sessionState)
-//                    EmptyView()
                 case .LateToBreak:
                     FailedToBreak(sessionState: $sessionState)
                 case .FailedToCatch:
                     FailedToBreak(failedType: .FailCatch, sessionState: $sessionState)
                 case .ChooseEggs:
                     EggGachaView(sessionState: $sessionState)
-//                    EmptyView()
                 case .OpenEggs:
                     EggRevealView(sessionState: $sessionState)
-//                    EmptyView()
                 case .StartBreak:
                     StartBreakView(sessionState: $sessionState)
-//                    EmptyView()
                 case .BreakSession:
                     BreakSessionView(sessionState: $sessionState)
-//                    EmptyView()
                 case .BreakActivity:
                     BreakEndActionView(sessionState: $sessionState)
                         .onAppear {
@@ -60,13 +53,10 @@ struct StudySessionPageView: View {
                         .onDisappear {
                             hapticsManager.stopBreakHaptics()
                         }
-//                    EmptyView()
                 case .BreakActivityFailed:
                     BreakEndFailedView(sessionState: $sessionState)
-//                    EmptyView()
                 case .BreakActivitySuccess:
                     BreakEndSuccessView(sessionState: $sessionState)
-//                    EmptyView()
                 }
             } else {
                 if specialEvent {
