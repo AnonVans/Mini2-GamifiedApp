@@ -100,5 +100,6 @@ class TimeAssignmentViewModel: ObservableObject {
         }
         
         self.currentSession = 0
+        self.sessionOver = false
     }
 }

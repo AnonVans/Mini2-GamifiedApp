@@ -18,6 +18,8 @@ struct BeforeBreakView: View {
     
     @Binding var sessionState: SessionState
     
+    var timeVM = TimeAssignmentViewModel.getInstance()
+    
     var body: some View {
         ZStack {
             Image(chicken.getChickenName())
@@ -32,7 +34,7 @@ struct BeforeBreakView: View {
             
             VStack {
                 ZStack {
-                    TimerComponent(currDuration: Int(timeRemaining), signal: $studySignal)
+                    TimerComponent(currDuration: timeVM.sessionDuration, signal: $studySignal)
                         .onChange(of: studySignal) { oldValue, newValue in
                             sessionState = .LateToBreak
                         }
@@ -81,6 +83,7 @@ struct BeforeBreakView: View {
         .onAppear {
             chicken.state = .Happy
             chicken.pose = .HandsUp
+            timeRemaining = Double(timeVM.sessionDuration)
         }
     }
 }

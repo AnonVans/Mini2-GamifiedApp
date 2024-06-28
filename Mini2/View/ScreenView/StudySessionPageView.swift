@@ -33,6 +33,7 @@ struct StudySessionPageView: View {
                         }
                 case .EggCatch:
                     EggCatchView(sessionState: $sessionState)
+//                    EmptyView()
                 case .LateToBreak:
                     FailedToBreak(sessionState: $sessionState)
                 case .FailedToCatch:

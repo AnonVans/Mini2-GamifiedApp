@@ -13,11 +13,12 @@ struct BreakEndActionView: View {
     @State var messageXOffset = -125.0
     
     @State var timer: Timer?
-    @State var limitCounter = 0
     @State var timerSignal: Bool = false
     @State var chicken: Chicken = UserViewModel.readChick()
     
     @Binding var sessionState: SessionState
+    
+    var timeVM = TimeAssignmentViewModel.getInstance()
     
     var body: some View {
         ZStack {
@@ -34,8 +35,6 @@ struct BreakEndActionView: View {
                         .position(x: foxXPos, y: 350)
                         .onAppear {
                             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-                                limitCounter += 1
-                                
                                 withAnimation(.easeIn(duration: 1)) {
                                     foxXPos += 1
                                 }
@@ -46,8 +45,8 @@ struct BreakEndActionView: View {
                                 }
                             })
                         }
-                        .onChange(of: limitCounter) { oldValue, newValue in
-                            if limitCounter == 30 {
+                        .onChange(of: timerSignal) { oldValue, newValue in
+                            if timerSignal {
                                 stopTimer()
                                 sessionState = .BreakActivityFailed
                             }
@@ -78,7 +77,7 @@ struct BreakEndActionView: View {
                   .frame(width: 250, alignment: .top)
                   .padding(.top, 35)
                 
-                TimerComponent(currDuration: 10, signal: $timerSignal, type: .Swiper)
+                TimerComponent(currDuration: timeVM.sessionDuration, signal: $timerSignal, type: .Swiper)
                     .padding(1)
                 
                 Spacer()
