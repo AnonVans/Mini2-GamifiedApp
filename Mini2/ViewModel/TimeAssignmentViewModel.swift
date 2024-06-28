@@ -58,7 +58,7 @@ class TimeAssignmentViewModel: ObservableObject {
     func updateSession() {
         self.currentSession += 1
         calculateSessionDuration()
-        print("Session: \(currentSession) || Remaining: \(studyTimeinMinutes)")
+        print("Session: \(self.currentSession) || Remaining: \(self.studyTimeinMinutes)")
     }
     
     func checkEndSession() {
@@ -70,7 +70,7 @@ class TimeAssignmentViewModel: ObservableObject {
     func calculateSessionDuration() {
         if currentSession%2 == 1 {
             //Return Study Session
-            if studyTimeinMinutes > 30 {
+            if self.studyTimeinMinutes > 30 {
                 self.studyTimeinMinutes -= 25
                 self.sessionDuration = 25*60
                 print("25 Minute Study")
@@ -100,5 +100,6 @@ class TimeAssignmentViewModel: ObservableObject {
         }
         
         self.currentSession = 0
+        self.sessionOver = false
     }
 }

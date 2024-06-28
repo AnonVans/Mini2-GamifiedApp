@@ -36,4 +36,8 @@ extension Image {
     var EggCatchChickIMG: some View {
         return self.resizable().scaledToFit().frame(width: 170)
     }
+    
+    var EggCatchEggIMG: some View {
+        return self.resizable().scaledToFit().frame(height: 100)
+    }
 }

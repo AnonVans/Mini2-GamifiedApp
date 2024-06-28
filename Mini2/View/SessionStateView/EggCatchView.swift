@@ -9,28 +9,26 @@ import SwiftUI
 
 struct EggCatchView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    let eggTimer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
-    @State private var basketTapped = false
+    let eggTimer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    @State private var basketTapped = true
     @State private var leftArrowXAmount = 60.0
     @State private var rightArrowXAmount = 60.0
     @State private var basketPosition:CGPoint = CGPoint(x: 200.0, y: 670.0)
-    @State private var eggPositions: [CGPoint] = Array(repeating: CGPoint(x: 0, y: 150), count: 3)
-    @State private var eggDisappear: [Bool] = Array(repeating: false, count: 3)
-    @State private var currentEggIndex: Int = 0
-    @State private var chickenPositions: [CGPoint] = Array(repeating: CGPoint(x: 100, y: 100), count: 3)
-    @State private var eggCounter = 0
-    @State private var eggBroken: [Bool] = Array(repeating: false, count: 3)
-    @State private var brokenEggPositions: [CGPoint] = Array(repeating: CGPoint(x: 0, y: 650), count: 3)
-    
-    @Binding var sessionState: SessionState
+    @State private var eggFallCounter = 0
     @State var chick: Chicken = UserViewModel.readChick()
+    @State var eggBroke = false
+    @State var randomXPos = 200.0
+    @State var eggYPos = 150.0
+    @State var catchCounter = 0
+    @State var fadeEgg = false
+    @Binding var sessionState: SessionState
     
     var basketVM = BasketDragViewModel.getInstance()
     var gachaVM = EggGachaViewModel.getInstance()
     
     var body: some View {
         ZStack {
-            if(basketTapped == false){
+            if !basketTapped {
                 Image(chick.getChickenName())
                     .EggCatchChickIMG
                     .padding(.top, 50)
@@ -75,65 +73,65 @@ struct EggCatchView: View {
             } else {
                 ZStack{
                     DraggableView(location: $basketPosition, imageName: "Nest")
-                        .onChange(of: basketPosition){ oldValue, newValue in
-                            self.basketPosition.x = newValue.x
-//                            print("Basket position updated: \(newValue)")
-                        }
+//                        .onChange(of: basketPosition){ oldValue, newValue in
+//                            self.basketPosition.x = newValue.x
+////                            print("Basket position updated: \(newValue)")
+//                        }
                     
                     VStack{
                         ZStack {
-                            ForEach(0..<eggPositions.count, id: \.self) { index in
+                            Image(eggBroke ? "TelorPecah" : "Egg")
+                                .EggCatchEggIMG
+                                .opacity(fadeEgg ? 0 : 1)
+                                .position(x: randomXPos, y: eggYPos)
                                 
-                                Image("Egg")
-                                    .resizable()
-                                    .frame(width: 60, height: 100)
-                                    .position(eggPositions[index])
-                                    .opacity(index <= currentEggIndex && !eggDisappear[index] ? 1 : 0)
-                                    .animation(.default, value: currentEggIndex)
-                                
-                                Image(chick.getChickenName())
-                                    .EggCatchChickIMG
-                                    .padding(.top, 50)
-                                    .position(chickenPositions[index])
-                                    .opacity(index <= currentEggIndex && !eggDisappear[index] ? 1 : 0)
-                                
-                                Image("TelorPecah")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 190, height: 90)
-                                    .position(brokenEggPositions[index])
-                                    .opacity(eggBroken[index] ? 1 : 0)
-                                    .animation(.easeInOut, value: eggBroken)
-                            }
+                            Image(chick.getChickenName())
+                                .EggCatchChickIMG
+                                .position(x: randomXPos + 15, y: 130.0)
                         }
                         .onAppear {
-                            for i in 0..<eggPositions.count {
-                                eggPositions[i].x = CGFloat.random(in: 50..<351)
-                                chickenPositions[i].x = eggPositions[i].x
-                                brokenEggPositions[i].x = eggPositions[i].x
-                            }
+                            randomXPos = .random(in: 85...285)
                         }
                         .onReceive(eggTimer) { _ in
-                            if currentEggIndex < eggPositions.count {
-                                withAnimation(Animation.easeInOut(duration: 1)) {
-                                    eggPositions[currentEggIndex].y = 650
-                                } completion: {
-                                    checkEggCaught(currentEggIndex: currentEggIndex)
-                                    
-                                    currentEggIndex += 1
-                                }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                    eggDisappear[currentEggIndex - 1] = true
-                                }
-                            }
-                            
-                            if currentEggIndex == 3 {
-                                if eggCounter == 0 {
+                            if eggFallCounter == 3 {
+                                if catchCounter == 0 {
                                     sessionState = .FailedToCatch
                                 } else {
                                     basketVM.resetBasket()
-                                    gachaVM.setEggAmount(eggCounter)
+                                    gachaVM.setEggAmount(catchCounter)
                                     sessionState = .ChooseEggs
+                                }
+                            } else {
+                                eggFallCounter += 1
+                                print("Egg fall: \(eggFallCounter) || Catched Egg: \(catchCounter)")
+                            }
+                            
+                            withAnimation(.easeInOut(duration: 1.5)) {
+                                eggYPos = 650
+                            } completion: {
+                                if randomXPos <= (basketPosition.x + 40) && randomXPos >= (basketPosition.x - 40) {
+                                    catchCounter += 1
+                                    
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        fadeEgg = true
+                                    } completion: {
+                                        withAnimation(.easeInOut(duration: 0.5)) {
+                                            basketVM.updateBasket()
+                                        } completion: {
+                                            resetValue()
+                                        }
+                                    }
+                                } else {
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        eggBroke = true
+                                    } completion: {
+                                        withAnimation(.easeInOut(duration: 0.5)) {
+                                            fadeEgg = true
+                                        } completion: {
+                                            eggBroke = false
+                                            resetValue()
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -145,22 +143,10 @@ struct EggCatchView: View {
         }
     }
     
-    private func checkEggCaught(currentEggIndex: Int) {
-        if(eggPositions[currentEggIndex].x <= basketPosition.x + 50 && eggPositions[currentEggIndex].x >= basketPosition.x - 50){
-            
-            basketVM.updateBasket()
-            
-            eggCounter += 1
-            print("yesss")
-            print("\(basketPosition.x) and \(eggPositions[currentEggIndex].x)")
-        } else {
-            eggBroken[currentEggIndex] = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                eggBroken[currentEggIndex] = false
-            }
-        }
-        
-        print("eggcounter: \(eggCounter)")
+    private func resetValue() {
+        eggYPos = 150
+        randomXPos = .random(in: 85...285)
+        fadeEgg = false
     }
 }
 
