@@ -95,7 +95,10 @@ class TimeAssignmentViewModel: ObservableObject {
     }
     
     func resetCurrentSession() {
-        self.studyTimeinMinutes = 60
+        if self.studyTimeinMinutes == 0 {
+            self.studyTimeinMinutes = 60
+        }
+        
         self.currentSession = 0
     }
 }
