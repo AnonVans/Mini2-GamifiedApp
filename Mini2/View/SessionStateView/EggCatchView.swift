@@ -120,10 +120,11 @@ struct EggCatchView: View {
                                 } completion: {
                                     checkEggCaught(currentEggIndex: currentEggIndex)
                                     
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                        eggDisappear[currentEggIndex - 1] = true
+                                    }
+                                    
                                     currentEggIndex += 1
-                                }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                    eggDisappear[currentEggIndex - 1] = true
                                 }
                             }
                             
