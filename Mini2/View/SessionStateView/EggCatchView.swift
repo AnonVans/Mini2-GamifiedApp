@@ -73,10 +73,6 @@ struct EggCatchView: View {
             } else {
                 ZStack{
                     DraggableView(location: $basketPosition, imageName: "Nest")
-//                        .onChange(of: basketPosition){ oldValue, newValue in
-//                            self.basketPosition.x = newValue.x
-////                            print("Basket position updated: \(newValue)")
-//                        }
                     
                     VStack{
                         ZStack {
